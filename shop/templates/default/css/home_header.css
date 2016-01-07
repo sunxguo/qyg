@@ -51,10 +51,10 @@
     white-space: nowrap;
 }
 #search ul.tab li.current:hover {
-    background: #d93600 none repeat scroll 0 0;
+    background: #ff6600 none repeat scroll 0 0;
 }
 #search ul.tab li.current {
-    background: #d93600 none repeat scroll 0 0;
+    background: #ff6600 none repeat scroll 0 0;
     color: #fff;
     float: left;
     height: 20px;
@@ -63,7 +63,7 @@
     padding: 0 14px 3px;
 }
 .head-search-bar .search-form {
-    background-color: #d93600;
+    background-color: #ff6600;
     height: 36px;
     padding: 3px;
 }
@@ -165,7 +165,7 @@
     width: 100px;
 }
 .head-app .download-app .hint h4 {
-    color: #d93600;
+    color: #ff6600;
     font-size: 14px;
     font-weight: 600;
     line-height: 24px;
@@ -496,7 +496,7 @@
     font-weight: 600;
 }
 .head-user-menu dl dd .checkout .btn-cart {
-    background-color: #d93600;
+    background-color: #ff6600;
     border-radius: 4px;
     clear: both;
     color: #fff;
@@ -875,7 +875,7 @@
     display: block;
 }
 .nch-breadcrumb a:hover {
-    color: #d93600;
+    color: #ff6600;
 }
 #top-banner {
     display: none;
