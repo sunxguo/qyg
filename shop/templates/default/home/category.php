@@ -15,6 +15,7 @@
     <?php if(!empty($output['show_goods_class']) && is_array($output['show_goods_class'])){?>
     <ul class="nch-category-container" id="categoryList">
       <?php foreach($output['show_goods_class'] as $key=>$gc_list){?>
+	  <?php if($gc_list['gc_id']!=530){?>
       <li class="classes">
         <div class="title"><i></i>
         <a href="<?php echo urlShop('search', 'index', array('cate_id' => $gc_list['gc_id']));?>"><?php echo $gc_list['gc_name'];?></a>
@@ -34,7 +35,7 @@
         <?php }?>
         <?php }?>
       </li>
-      <?php }?>
+      <?php }}?>
     </ul>
     <?php }?>
   </div>

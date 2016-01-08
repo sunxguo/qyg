@@ -8,7 +8,7 @@
     <tbody>
       <tr>
         <td class="w12"></td>
-        <td>欢迎使多用户商城程序，祝君生意兴隆。<a href="#" title="技术支持" target="_blank">技术支持</a></td>
+        <td>欢迎使风度商城系统，祝君生意兴隆。<a href="http://fengdukeji.com" title="技术支持" target="_blank">技术支持</a></td>
       </tr>
     </tbody><tfoot>
       <tr class="tfoot">
