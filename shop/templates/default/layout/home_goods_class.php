@@ -7,6 +7,7 @@
   <ul class="menu">
     <?php if (!empty($output['show_goods_class']) && is_array($output['show_goods_class'])) { $i = 0; ?>
     <?php foreach ($output['show_goods_class'] as $key => $val) { $i++; ?>
+	<?php if($val['gc_id']!=530){?>
     <li cat_id="<?php echo $val['gc_id'];?>" class="<?php echo $i%2==1 ? 'odd':'even';?>" <?php if($i>14){?>style="display:none;"<?php }?>>
       <div class="class">
         <?php if(!empty($val['pic'])) { ?>
@@ -58,6 +59,7 @@
         </div>
       </div>
     </li>
+    <?php } ?>
     <?php } ?>
     <?php } ?>
   </ul>
