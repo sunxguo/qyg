@@ -34,34 +34,7 @@
 	</div>
 </header>
 <div class="main" id="main-container"></div>
-<footer id="footer"></footer>
-<script type="text/html" id="adv_list">
-	<div class="adv_list">
-		<div class="swipe-wrap">
-		<% for (var i in item) { %>
-			<div class="item">
-				<a href="<%= item[i].url %>">
-					<img src="<%= item[i].image %>" alt="">
-				</a>
-			</div>
-		<% } %>
-		</div>
-	</div>
-</script>
-<script type="text/html" id="home1">
-	<div class="index_block home1">
-	<% if (title) { %>
-		<div class="title"><%= title %></div>
-	<% } %>
-		<div class="content">
-			<div class="item">
-				<a href="<%= url %>">
-					<img src="<%= image %>" alt="">
-				</a>
-			</div>
-		</div>
-	</div>
-</script>
+
 
 	<div class="index_block home0">
 		<ul class="index_features">
@@ -91,6 +64,34 @@
 			</li>
 		</ul>
 	</div>
+<footer id="footer"></footer>
+<script type="text/html" id="adv_list">
+	<div class="adv_list">
+		<div class="swipe-wrap">
+		<% for (var i in item) { %>
+			<div class="item">
+				<a href="<%= item[i].url %>">
+					<img src="<%= item[i].image %>" alt="">
+				</a>
+			</div>
+		<% } %>
+		</div>
+	</div>
+</script>
+<script type="text/html" id="home1">
+	<div class="index_block home1">
+	<% if (title) { %>
+		<div class="title"><%= title %></div>
+	<% } %>
+		<div class="content">
+			<div class="item">
+				<a href="<%= url %>">
+					<img src="<%= image %>" alt="">
+				</a>
+			</div>
+		</div>
+	</div>
+</script>
 <script type="text/html" id="home0"><!-- 
 	<div class="index_block home0">
 		<ul class="index_features">
