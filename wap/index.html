@@ -58,6 +58,18 @@
 	</div>
 </script>
 <script type="text/html" id="home1">
+	<div class="index_block home1">
+	<% if (title) { %>
+		<div class="title"><%= title %></div>
+	<% } %>
+		<div class="content">
+			<div class="item">
+				<a href="<%= url %>">
+					<img src="<%= image %>" alt="">
+				</a>
+			</div>
+		</div>
+	</div>
 	<div class="index_block home0">
 		<ul class="index_features">
 			<li>
@@ -85,18 +97,6 @@
 				</a>
 			</li>
 		</ul>
-	</div>
-	<div class="index_block home1">
-	<% if (title) { %>
-		<div class="title"><%= title %></div>
-	<% } %>
-		<div class="content">
-			<div class="item">
-				<a href="<%= url %>">
-					<img src="<%= image %>" alt="">
-				</a>
-			</div>
-		</div>
 	</div>
 </script>
 <script type="text/html" id="home2">
