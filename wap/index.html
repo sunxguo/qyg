@@ -33,36 +33,7 @@
 		</div>
 	</div>
 </header>
-<div class="main" id="main-container">
-
-	<div class="index_block home0">
-		<ul class="index_features">
-			<li>
-				<a href="http://quanyougo.com/wap/tmpl/product_first_categroy.html">
-					<img src="http://quanyougo.com/data/upload/mobile/special/s0/s0_05073163404053144.png">
-					<p>分类</p>
-				</a>
-			</li>
-			<li>
-				<a href="http://quanyougo.com/wap/tmpl/go_store.html?store_id=1">
-					<img src="http://quanyougo.com/data/upload/mobile/special/s0/s0_05073164000016371.png">
-					<p>自营店</p>
-				</a>
-			</li>
-			<li>
-				<a href="http://quanyougo.com/shop/index.php?act=search&op=index&cate_id=1044">
-					<img src="http://quanyougo.com/data/upload/mobile/special/s0/s0_05073165752379906.png">
-					<p>分类</p>
-				</a>
-			</li>
-			<li>
-				<a href="http://quanyougo.com/wap/tmpl/member/member.html?act=member">
-					<img src="http://quanyougo.com/data/upload/mobile/special/s0/s0_05073167357294970.png">
-					<p>积分</p>
-				</a>
-			</li>
-		</ul>
-	</div></div>
+<div class="main" id="main-container"></div>
 <footer id="footer"></footer>
 <script type="text/html" id="adv_list">
 	<div class="adv_list">
@@ -91,7 +62,30 @@
 		</div>
 	</div>
 </script>
-<script type="text/html" id="home0"><!-- 
+<script type="text/html" id="home0">
+	
+</script>
+<script type="text/html" id="home2">
+	<div class="index_block home2">
+	<% if (title) { %>
+		<div class="title"><%= title %></div>
+	<% } %>
+		<div class="content">
+			<div class="item home2_1">
+				<a href="<%= square_url %>"><img src="<%= square_image %>" alt=""></a>
+			</div>
+			<div class="item home2_2">
+				<div class="border-left">
+					<div class="border-bottom">
+						<a href="<%= rectangle1_url %>"><img src="<%= rectangle1_image %>" alt=""></a>
+					</div>
+					<div>
+						<a href="<%= rectangle2_url %>"><img src="<%= rectangle2_image %>" alt=""></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="index_block home0">
 		<ul class="index_features">
 			<li>
@@ -119,28 +113,6 @@
 				</a>
 			</li>
 		</ul>
-	</div> -->
-</script>
-<script type="text/html" id="home2">
-	<div class="index_block home2">
-	<% if (title) { %>
-		<div class="title"><%= title %></div>
-	<% } %>
-		<div class="content">
-			<div class="item home2_1">
-				<a href="<%= square_url %>"><img src="<%= square_image %>" alt=""></a>
-			</div>
-			<div class="item home2_2">
-				<div class="border-left">
-					<div class="border-bottom">
-						<a href="<%= rectangle1_url %>"><img src="<%= rectangle1_image %>" alt=""></a>
-					</div>
-					<div>
-						<a href="<%= rectangle2_url %>"><img src="<%= rectangle2_image %>" alt=""></a>
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 </script>
 <script type="text/html" id="home3">
