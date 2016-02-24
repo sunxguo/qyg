@@ -103,8 +103,8 @@ a{text-decoration: none;}
 .evaluation_good_swp,.evaluation_good_star{display: inline-block;}
 .evaluation_good_star{width: 20px;height: 20px;background:url(../images/star.png) no-repeat;}
 
-.evaluation-star {width: 28px;height: 28px;background:url(../images/star_metro_orang.png) no-repeat;}
-.evaluation-star-gray {width: 28px;height: 28px;background:url(../images/star_metro_orang2.png) no-repeat;}
+.evaluation-star {width: 20px;height: 20px;background:url(../images/star_metro_orang20.png) no-repeat;}
+.evaluation-star-gray {width: 20px;height: 20px;background:url(../images/star_metro_orang220.png) no-repeat;}
 
 /*footer*/
 .footer-top{position:relative;background:#fff;height: 44px;padding: 0 55px;margin: 10px 0px; border-bottom:1px solid #DED6C9; border-top:1px solid #DED6C9;}
