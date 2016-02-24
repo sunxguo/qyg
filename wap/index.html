@@ -14,12 +14,11 @@
 <style type="text/css">
 	.index_features{
 		width: 100%;
-		padding: 20px 0;
 	}
 	.index_features li{
 		float: left;
 		width: 15%;
-		margin:0 5%;
+		margin:20px 5%;
 	}
 	.index_features li:last-child{
 		margin-right: 0;
@@ -72,9 +71,6 @@
 		</div>
 	</div>
 </script>
-<script type="text/html" id="home0">
-	
-</script>
 <script type="text/html" id="home2">
 	<div class="index_block home2">
 	<% if (title) { %>
@@ -94,6 +90,20 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+</script>
+<script type="text/html" id="home3">
+	<div class="index_block home3">
+	<% if (title) { %>
+		<div class="title"><%= title %></div>
+	<% } %>
+		<div class="content">
+		<% for (var i in item) { %>
+			<div class="item">
+				<a href="<%= item[i].url %>"><img src="<%= item[i].image %>" alt=""></a>
+			</div>
+		<% } %>
 		</div>
 	</div>
 	<div class="index_block home0">
@@ -123,20 +133,6 @@
 				</a>
 			</li>
 		</ul>
-	</div>
-</script>
-<script type="text/html" id="home3">
-	<div class="index_block home3">
-	<% if (title) { %>
-		<div class="title"><%= title %></div>
-	<% } %>
-		<div class="content">
-		<% for (var i in item) { %>
-			<div class="item">
-				<a href="<%= item[i].url %>"><img src="<%= item[i].image %>" alt=""></a>
-			</div>
-		<% } %>
-		</div>
 	</div>
 </script>
 <script type="text/html" id="home4">
