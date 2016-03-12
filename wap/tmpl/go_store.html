@@ -22,7 +22,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- <img src="<?php echo getStoreLogo($output['store_info']['store_label'],'store_logo');?>"/> -->
+
 	<div class="store_header"></div>
 	<div id="product_detail_wp"></div>
 	<div class="content">
@@ -65,8 +65,9 @@
 	<input type="hidden" name="keyword">
 	<footer id="footer"></footer>
 	</div>
-	<script type="text/html" id="go_store">
+	<script type="text/html" id="go_store"> 
 		<div class="m_store_bg"></div>
+		<img src="<%=store_info.store_banner%>" width="100%" height="40px">
 		<div class="ncs-info">
 		<div class="title">
 			<h4><%=store_info.store_name%></h4>
