@@ -22,7 +22,7 @@ class seller_loginControl extends BaseSellerControl {
         $this->show_loginOp();
     }
 
-    public function show_loginOp() {
+    public function show_loginOp(){
         Tpl::output('nchash', getNchash());
 		Tpl::setLayout('null_layout');
         Tpl::showpage('login');
