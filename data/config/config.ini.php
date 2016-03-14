@@ -1,10 +1,6 @@
 <?php
 // defined('InShopNC') or exit('Access Invalid!');
-<<<<<<< HEAD
 //http://221.204.237.30:8090
-=======
-
->>>>>>> c14b0aa76a52fe7dcb3354c9e1a650a4f2c03a7c
 $config = array();
 $config['base_site_url']        = 'http://quanyougo.com';
 $config['shop_site_url'] 		= 'http://quanyougo.com/shop';
@@ -23,7 +19,6 @@ $config['setup_date'] 	= '2015-12-31 21:32:33';
 $config['gip'] 			= 0;
 $config['dbdriver'] 	= 'mysqli';
 $config['tablepre']		= '33hao_';
-<<<<<<< HEAD
 /*
 外网的数据库配置文件
 $config['db']['1']['dbhost']       = 'localhost';
@@ -42,8 +37,6 @@ $config['db']['1']['dbpwd']        = '19910910jacksun';
 $config['db']['1']['dbname']       = 'qyg';
 $config['db']['1']['dbcharset']    = 'UTF-8';
 */
-=======
->>>>>>> c14b0aa76a52fe7dcb3354c9e1a650a4f2c03a7c
 $config['db']['1']['dbhost']       = 'localhost';
 $config['db']['1']['dbport']       = '3306';
 $config['db']['1']['dbuser']       = 'root';

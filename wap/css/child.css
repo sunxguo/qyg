@@ -111,11 +111,9 @@
 .pddcp-one-hide .key{margin-bottom:5px; }
 .pddcp-one-hide p{line-height: 23px;color: #909090;}
 .pddcp-one-wp.current .pddcp-one-hide {display: block;}
-<<<<<<< HEAD
+
 .pddc-stock a{margin:1px 1px 5px 1px;position:relative;color: #6d6d6d;display: inline-block;padding: 5px 10px;}
-=======
-.pddc-stock a{margin:1px 1px 5px 1px;position:relative;color: #6d6d6d;display: inline-block;padding: 5px 10px;border:1px solid #ddd;}
->>>>>>> c14b0aa76a52fe7dcb3354c9e1a650a4f2c03a7c
+
 .pddc-stock .pd-choice-icon{display: none;}
 .pddc-stock a.current{border:2px solid #ff4576;margin:0px 0px 4px 0px;}
 .pddc-stock a.current .pd-choice-icon{display: inline-block;}
@@ -158,11 +156,9 @@
 /*cart*/
 .buy-num{width: 50px;text-align: center;height: 36px;-webkit-box-shadow:inset 0 1px 3px rgba(0,0,0,.05);box-shadow:inset 0 1px 3px rgba(0,0,0,.05);border:1px solid #e3e3e3;}
 .minus-wp,.add-wp{height: 36px;line-height:36px;width: 36px;display: inline-block;text-align: center;background: #e3e3e3;border:1px solid #e3e3e3;cursor: pointer;}
-<<<<<<< HEAD
+
 .opera-pd-item{margin-right: 0px;height: 40px;line-height:40px;text-align: center;color: #fff;cursor: pointer; padding:5px 10px 0 0 ;}
-=======
-.opera-pd-item{margin-right: 10px;height: 40px;line-height:40px;text-align: center;color: #fff;cursor: pointer; padding:0 10px;}
->>>>>>> c14b0aa76a52fe7dcb3354c9e1a650a4f2c03a7c
+
 .buy-now{background:#D9434E;}
 .add-to-cart{background: #6cb248;}
 .no-buy-now{background:#aaa;cursor: not-allowed;}
