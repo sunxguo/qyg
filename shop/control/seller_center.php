@@ -21,7 +21,11 @@ class seller_centerControl extends BaseSellerControl {
      * 商户中心首页
      *
      */
+<<<<<<< HEAD
     public function indexOp(){
+=======
+    public function indexOp() {
+>>>>>>> c14b0aa76a52fe7dcb3354c9e1a650a4f2c03a7c
 		Language::read('member_home_index');
         // 店铺信息
         $store_info = $this->store_info;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # This folder does not require access over HTTP
 # (the following directive denies access by default)
 #Order allow,deny
@@ -20,4 +21,28 @@
 #RewriteCond %{REQUEST_FILENAME} !-d
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+=======
+# This folder does not require access over HTTP
+# (the following directive denies access by default)
+#Order allow,deny
+
+# php-cgi 运行
+
+#<IfModule mod_rewrite.c>
+#	RewriteEngine on
+#	RewriteCond %{REQUEST_FILENAME} !-d
+#	RewriteCond %{REQUEST_FILENAME} !-f
+#	RewriteRule ^(.*)$ index.php [L,E=PATH_INFO:$1]
+#</IfModule>
+
+
+
+# php5apache2_2.dll 方式运行
+
+#<IfModule mod_rewrite.c>
+#RewriteEngine on
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+>>>>>>> c14b0aa76a52fe7dcb3354c9e1a650a4f2c03a7c
 #</IfModule>

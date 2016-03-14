@@ -55,7 +55,11 @@
       </dd>
     </dl>
     <dl>
+<<<<<<< HEAD
       <dt><?php echo $lang['store_setting_change_banner'].$lang['nc_colon'];?></dt>
+=======
+      <dt><?php echo $lang['store_setting_change_banner'].$lang['nc_colon'];?> </dt>
+>>>>>>> c14b0aa76a52fe7dcb3354c9e1a650a4f2c03a7c
       <dd>
         <div class="ncsc-upload-thumb store-banner">
           <p><?php if(empty($output['store_info']['store_banner'])){?>

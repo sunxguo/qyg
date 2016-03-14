@@ -52,7 +52,11 @@ a{text-decoration: none;}
 .bd-t-de{border-top: 1px solid #dedede;}
 .bd-t-cc{border-top: 1px solid #ccc;}
 .bd-b-cc{border-bottom: 1px solid #ccc;}
+<<<<<<< HEAD
 .bd-tdashed-dd{border-top: 1px dashed #ddd; width:100%; background: #FFF;}
+=======
+.bd-tdashed-dd{border-top: 1px dashed #ddd;}
+>>>>>>> c14b0aa76a52fe7dcb3354c9e1a650a4f2c03a7c
 .header-back span,.i-main-opera span,.main-op-warp .quarter span,
 .search-btn,.gotop-icon,.grayrightarrow,.home-nav a span,.graydownarrow,.grayuparrow,.whitedownarrow,
 .product-filter .f-icon,.pd-choice-icon,.i-go-right,.s-chk1,.i-del,.i-address,.i-add,.i-minus{display: inline-block;background: url(../images/icon.png) no-repeat;}
