@@ -37,11 +37,11 @@ $config['db']['1']['dbpwd']        = '19910910jacksun';
 $config['db']['1']['dbname']       = 'qyg';
 $config['db']['1']['dbcharset']    = 'UTF-8';
 */
-$config['db']['1']['dbhost']       = 'localhost';
+$config['db']['1']['dbhost']       = '182.92.156.106';
 $config['db']['1']['dbport']       = '3306';
 $config['db']['1']['dbuser']       = 'root';
-$config['db']['1']['dbpwd']        = 'quanyougou123';
-$config['db']['1']['dbname']       = '33hao';
+$config['db']['1']['dbpwd']        = '19910910jacksun';
+$config['db']['1']['dbname']       = 'qyg';
 $config['db']['1']['dbcharset']    = 'UTF-8';
 $config['db']['slave']                  = $config['db']['master'];
 $config['session_expire'] 	= 3600;
@@ -57,7 +57,7 @@ $config['cache']['type'] 			= 'file';
 //$config['redis']['slave']      	    = array();
 //$config['fullindexer']['open']      = false;
 //$config['fullindexer']['appname']   = '33hao';
-$config['debug'] 			= false;
+$config['debug'] 			= true;
 $config['default_store_id'] = '1';
 //如果开始伪静态，这里设置为true
 $config['url_model'] = false;

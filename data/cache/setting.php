@@ -12,11 +12,9 @@
   'circle_intervaltime' => '1',
   'circle_iscreate' => '1',
   'circle_istalk' => '1',
-<<<<<<< HEAD
+
   'circle_isuse' => '1',
-=======
-  'circle_isuse' => '0',
->>>>>>> c14b0aa76a52fe7dcb3354c9e1a650a4f2c03a7c
+
   'circle_joinsum' => '12',
   'circle_loginpic' => 'a:4:{i:1;a:2:{s:3:"pic";s:5:"1.jpg";s:3:"url";s:22:"http://www.baidu.com/";}i:2;a:2:{s:3:"pic";s:5:"2.jpg";s:3:"url";s:22:"http://www.baidu.com/";}i:3;a:2:{s:3:"pic";s:5:"3.jpg";s:3:"url";s:22:"http://www.baidu.com/";}i:4;a:2:{s:3:"pic";s:5:"4.jpg";s:3:"url";s:22:"http://www.baidu.com/";}}',
   'circle_logo' => 'logo.png',
@@ -25,21 +23,16 @@
   'circle_seodescription' => '发现精彩：圈子是买家们自己创建的私属领地，我们排斥广告分子，我们热爱真实分享！',
   'circle_seokeywords' => '圈子,帮派,讨论小组,购物,生活,分享,show,秀,商品,电子商务,社区,消费者社区,论坛,资讯,热门话题,朋友',
   'circle_seotitle' => '发现精彩 - 圈子',
-<<<<<<< HEAD
-  'circle_wordfilter' => NULL,
-  'closed_reason' => '升级中……',
-  'cms_attitude_flag' => '1',
-  'cms_comment_flag' => '1',
-  'cms_isuse' => '1',
-  'cms_logo' => '',
-=======
+
+  
+
   'circle_wordfilter' => '',
   'closed_reason' => '升级中……',
   'cms_attitude_flag' => '1',
   'cms_comment_flag' => '1',
   'cms_isuse' => '0',
   'cms_logo' => '05056739686520864.png',
->>>>>>> c14b0aa76a52fe7dcb3354c9e1a650a4f2c03a7c
+
   'cms_seo_description' => '资讯,画报',
   'cms_seo_keywords' => '资讯,画报',
   'cms_seo_title' => '资讯频道',
@@ -74,11 +67,9 @@
   'groupbuy_review_day' => '0',
   'guest_comment' => '1',
   'hot_search' => '周大福,内衣,金史密斯,手机',
-<<<<<<< HEAD
-  'icp_number' => '蜀ICP备13037466号',
-=======
+
   'icp_number' => '晋ICP备15008974号',
->>>>>>> c14b0aa76a52fe7dcb3354c9e1a650a4f2c03a7c
+
   'image_allow_ext' => 'gif,jpg,jpeg,bmp,png,swf',
   'image_dir_type' => '1',
   'image_max_filesize' => '1024',
@@ -92,41 +83,21 @@
   'live_pic4' => '',
   'login_pic' => 'a:4:{i:0;s:5:"1.jpg";i:1;s:5:"2.jpg";i:2;s:5:"3.jpg";i:3;s:5:"4.jpg";}',
   'malbum_max_sum' => '200',
-<<<<<<< HEAD
-  'md5_key' => '7525ec2d4496fe45dabea35dd8d1f298',
-  'member_grade' => 'a:4:{i:0;a:3:{s:5:"level";i:0;s:10:"level_name";s:2:"V0";s:9:"exppoints";i:0;}i:1;a:3:{s:5:"level";i:1;s:10:"level_name";s:2:"V1";s:9:"exppoints";i:1000;}i:2;a:3:{s:5:"level";i:2;s:10:"level_name";s:2:"V2";s:9:"exppoints";i:10000;}i:3;a:3:{s:5:"level";i:3;s:10:"level_name";s:2:"V3";s:9:"exppoints";i:20000;}}',
-  'member_logo' => '04878464478798406.png',
-  'microshop_goods_default_class' => '0',
-  'microshop_header_pic' => '',
-  'microshop_isuse' => '1',
-=======
+
   'md5_key' => '0bd61f8abd11800674cd87353f1358db',
   'member_grade' => 'a:4:{i:0;a:3:{s:5:"level";i:0;s:10:"level_name";s:2:"V0";s:9:"exppoints";i:0;}i:1;a:3:{s:5:"level";i:1;s:10:"level_name";s:2:"V1";s:9:"exppoints";i:1000;}i:2;a:3:{s:5:"level";i:2;s:10:"level_name";s:2:"V2";s:9:"exppoints";i:10000;}i:3;a:3:{s:5:"level";i:3;s:10:"level_name";s:2:"V3";s:9:"exppoints";i:20000;}}',
   'member_logo' => '05055659949760193.png',
   'microshop_goods_default_class' => '0',
   'microshop_header_pic' => '',
   'microshop_isuse' => '0',
->>>>>>> c14b0aa76a52fe7dcb3354c9e1a650a4f2c03a7c
+
   'microshop_logo' => '',
   'microshop_personal_limit' => '50',
   'microshop_seo_description' => '多用户商城,微商城,随心看,个人秀,店铺街',
   'microshop_seo_keywords' => '多用户商城,微商城,随心看,个人秀,店铺街,网上购物',
   'microshop_store_banner' => '',
   'microshop_style' => 'default',
-<<<<<<< HEAD
-  'mobile_apk' => 'http://v3.abc.com/v3.apk',
-  'mobile_apk_version' => '3.0.2',
-  'mobile_app' => 'mb_app.png',
-  'mobile_host' => '短信宝',
-  'mobile_host_type' => '1',
-  'mobile_ios' => 'http://v3.abc.com/v3.api',
-  'mobile_isuse' => '1',
-  'mobile_key' => '',
-  'mobile_memo' => '',
-  'mobile_pwd' => 'quanyougou123',
-  'mobile_signature' => '全优购',
-  'mobile_username' => 'quanyougou',
-=======
+
   'mobile_apk' => 'http://quanyougo.com/data/upload/mobile/qyg1.0.apk',
   'mobile_apk_version' => '1.0',
   'mobile_app' => 'mb_app.png',
@@ -139,7 +110,7 @@
   'mobile_pwd' => '88888888',
   'mobile_signature' => '全优购',
   'mobile_username' => '1169293220',
->>>>>>> c14b0aa76a52fe7dcb3354c9e1a650a4f2c03a7c
+
   'pointprod_isuse' => '1',
   'pointshop_isuse' => '1',
   'points_comments' => '50',
@@ -165,13 +136,10 @@
   'qq_appcode' => '',
   'qq_appid' => '101214249',
   'qq_appkey' => '4967d6b44840a766d1f4f2f73289e180',
-<<<<<<< HEAD
-  'qq_isuse' => '1',
-  'seller_center_logo' => '04878464478839613.png',
-=======
+
   'qq_isuse' => '0',
   'seller_center_logo' => '05055660145365190.png',
->>>>>>> c14b0aa76a52fe7dcb3354c9e1a650a4f2c03a7c
+
   'share_isuse' => '1',
   'share_qqweibo_appid' => '',
   'share_qqweibo_appkey' => '',
@@ -185,17 +153,7 @@
   'sina_wb_akey' => '',
   'sina_wb_skey' => '',
   'site_bank_account' => '',
-<<<<<<< HEAD
-  'site_email' => '1169293220@qq.com',
-  'site_logo' => '04878464478687908.png',
-  'site_logowx' => '04878464478763272.png',
-  'site_mobile_logo' => 'home_logo.png',
-  'site_name' => '全优购',
-  'site_phone' => '1169293220,88997788',
-  'site_status' => '1',
-  'site_tel400' => '4008008000',
-  'statistics_code' => '&lt;script type=&quot;text/javascript&quot;&gt;var cnzz_protocol = ((&quot;https:&quot; == document.location.protocol) ? &quot; https://&quot; : &quot; http://&quot;);document.write(unescape(&quot;%3Cspan id=&#039;cnzz_stat_icon_2076168&#039;%3E%3C/span%3E%3Cscript src=&#039;&quot; + cnzz_protocol + &quot;s11.cnzz.com/stat.php%3Fid%3D2076168&#039; type=&#039;text/javascript&#039;%3E%3C/script%3E&quot;));&lt;/script&gt;',
-=======
+
   'site_email' => '1220959492@qq.com',
   'site_logo' => '05049132044133365.png',
   'site_logowx' => '05055665486013733.jpg',
@@ -205,7 +163,7 @@
   'site_status' => '1',
   'site_tel400' => '4008008000',
   'statistics_code' => '',
->>>>>>> c14b0aa76a52fe7dcb3354c9e1a650a4f2c03a7c
+
   'stat_orderpricerange' => '',
   'stat_pricerange' => '',
   'store_joinin_pic' => 'a:2:{s:8:"show_txt";s:246:"平台提供各类专业管家服务，协助您开通店铺、运营店铺、组织营销活动及分析运营数据，悉心为您解答各类疑问，引导您按相关规则展开运营；我们将竭尽全力，为您的店铺保驾护航。";s:3:"pic";a:3:{i:1;s:18:"store_joinin_1.jpg";i:2;s:18:"store_joinin_2.jpg";i:3;s:0:"";}}',
