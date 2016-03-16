@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 //加载对比商品
 function loadCompare(isrefresh){
 	if(!$("#comparelist").html()){
