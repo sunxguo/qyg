@@ -211,7 +211,7 @@ function login_dialog(){
 /* 显示Ajax表单 */
 function ajax_form(id, title, url, width, model)
 {
-    if (!width)	width = 480;
+    if (!width) width = 480;
     if (!model) model = 1;
     var d = DialogManager.create(id);
     d.setTitle(title);
@@ -222,7 +222,7 @@ function ajax_form(id, title, url, width, model)
 }
 //显示一个内容为自定义HTML内容的消息
 function html_form(id, title, _html, width, model) {
-    if (!width)	width = 480;
+    if (!width) width = 480;
     if (!model) model = 0;
     var d = DialogManager.create(id);
     d.setTitle(title);
@@ -298,39 +298,39 @@ function collect_goods(fav_id,jstype,jsobj){
 }
 //加载购物车信息
 function load_cart_information(){
-	$.getJSON(SITEURL+'/index.php?act=cart&op=ajax_load&callback=?', function(result){
-	    var obj = $('.head-user-menu .my-cart');
-	    if(result){
-	       	var html = '';
-	       	if(result.cart_goods_num >0){
-	            for (var i = 0; i < result['list'].length; i++){
-	                var goods = result['list'][i];
-	            	html+='<dl id="cart_item_'+goods['goods_id']+'"><dt class="goods-name"><a href="'+goods['goods_url']+'">'+goods['goods_name']+'</a></dt>';
-	            	html+='<dd class="goods-thumb"><a href="'+goods['goods_url']+'" title="'+goods['goods_name']+'"><img src="'+goods['goods_image']+'"></a></dd>';
-		          	html+='<dd class="goods-sales"></dd>';
-		          	html+='<dd class="goods-price"><em>&yen;'+goods['goods_price']+'×'+goods['goods_num']+'</dd>';
-		          	html+='<dd class="handle"><a href="javascript:void(0);" onClick="drop_topcart_item('+goods['cart_id']+','+goods['goods_id']+');">删除</a></dd>';
-		          	html+="</dl>";
-		        }
-		        obj.find('.incart-goods').html(html);
-    	        obj.find('.incart-goods-box').perfectScrollbar('destroy');
-    	        obj.find('.incart-goods-box').perfectScrollbar();
-	         	html = "共<i>"+result.cart_goods_num+"</i>种商品&nbsp;&nbsp;总计金额：<em>&yen;"+result.cart_all_price+"</em>";
-		        obj.find('.total-price').html(html);
-		        if (obj.find('.addcart-goods-num').size()==0) {
-		            obj.append('<div class="addcart-goods-num">0</div>');
-		        }
-		        obj.find('.addcart-goods-num').html(result.cart_goods_num);
-				$('#rtoobar_cart_count').html(result.cart_goods_num).show();
-	      } else {
-	      	html="<div class='no-order'><span>您的购物车中暂无商品，赶快选择心爱的商品吧！</span></div>";
-	      	obj.find('.incart-goods').html(html);
-	      	obj.find('.total-price').html('');
-			$('.addcart-goods-num').remove();
+    $.getJSON(SITEURL+'/index.php?act=cart&op=ajax_load&callback=?', function(result){
+        var obj = $('.head-user-menu .my-cart');
+        if(result){
+            var html = '';
+            if(result.cart_goods_num >0){
+                for (var i = 0; i < result['list'].length; i++){
+                    var goods = result['list'][i];
+                    html+='<dl id="cart_item_'+goods['goods_id']+'"><dt class="goods-name"><a href="'+goods['goods_url']+'">'+goods['goods_name']+'</a></dt>';
+                    html+='<dd class="goods-thumb"><a href="'+goods['goods_url']+'" title="'+goods['goods_name']+'"><img src="'+goods['goods_image']+'"></a></dd>';
+                    html+='<dd class="goods-sales"></dd>';
+                    html+='<dd class="goods-price"><em>&yen;'+goods['goods_price']+'×'+goods['goods_num']+'</dd>';
+                    html+='<dd class="handle"><a href="javascript:void(0);" onClick="drop_topcart_item('+goods['cart_id']+','+goods['goods_id']+');">删除</a></dd>';
+                    html+="</dl>";
+                }
+                obj.find('.incart-goods').html(html);
+                obj.find('.incart-goods-box').perfectScrollbar('destroy');
+                obj.find('.incart-goods-box').perfectScrollbar();
+                html = "共<i>"+result.cart_goods_num+"</i>种商品&nbsp;&nbsp;总计金额：<em>&yen;"+result.cart_all_price+"</em>";
+                obj.find('.total-price').html(html);
+                if (obj.find('.addcart-goods-num').size()==0) {
+                    obj.append('<div class="addcart-goods-num">0</div>');
+                }
+                obj.find('.addcart-goods-num').html(result.cart_goods_num);
+                $('#rtoobar_cart_count').html(result.cart_goods_num).show();
+          } else {
+            html="<div class='no-order'><span>您的购物车中暂无商品，赶快选择心爱的商品吧！</span></div>";
+            obj.find('.incart-goods').html(html);
+            obj.find('.total-price').html('');
+            $('.addcart-goods-num').remove();
             $('#rtoobar_cart_count').html("").hide()
-	      }
-	   }
-	});
+          }
+       }
+    });
 }
 
 //头部删除购物车信息，登录前使用goods_id,登录后使用cart_id
@@ -340,21 +340,21 @@ function drop_topcart_item(cart_id,goods_id){
             var obj = $('.head-user-menu .my-cart');
             //删除成功
             if(result.quantity == 0){
-    	      	html="<div class='no-order'><span>您的购物车中暂无商品，赶快选择心爱的商品吧！</span></div>";
-    	      	obj.find('.incart-goods').html(html);
-    	      	obj.find('.total-price').html('');
-		        obj.find('.addcart-goods-num').remove();
-				$('.cart-list').html('<li><dl><dd style="text-align: center; ">暂无商品</dd></dl></li>');
+                html="<div class='no-order'><span>您的购物车中暂无商品，赶快选择心爱的商品吧！</span></div>";
+                obj.find('.incart-goods').html(html);
+                obj.find('.total-price').html('');
+                obj.find('.addcart-goods-num').remove();
+                $('.cart-list').html('<li><dl><dd style="text-align: center; ">暂无商品</dd></dl></li>');
                 $('div[ncType="rtoolbar_total_price"]').html("");
                 $('#rtoobar_cart_count').html("").hide()
             }else{
                 $('#cart_item_' + goods_id).remove();        //移除
-	         	html="共<i>"+result.quantity+"</i>种商品&nbsp;&nbsp;总计金额：<em>&yen;"+result.amount+"</em>";
-	         	obj.find('.total-price').html(html);
-		        obj.find('.addcart-goods-num').html(result.quantity);
-    	        obj.find('.incart-goods-box').perfectScrollbar('destroy');
-    	        obj.find('.incart-goods-box').perfectScrollbar();
-				$('div[ncType="rtoolbar_total_price"]').html("共计金额：<em class='goods-price'>&yen;" + result.amount + "</em>");
+                html="共<i>"+result.quantity+"</i>种商品&nbsp;&nbsp;总计金额：<em>&yen;"+result.amount+"</em>";
+                obj.find('.total-price').html(html);
+                obj.find('.addcart-goods-num').html(result.quantity);
+                obj.find('.incart-goods-box').perfectScrollbar('destroy');
+                obj.find('.incart-goods-box').perfectScrollbar();
+                $('div[ncType="rtoolbar_total_price"]').html("共计金额：<em class='goods-price'>&yen;" + result.amount + "</em>");
                 $("#rtoobar_cart_count").html(result.quantity);
                 if ($("#rtoolbar_cartlist > ul").children().size() != result.quantity) {
                     $("#rtoolbar_cartlist").load("index.php?act=cart&op=ajax_load&type=html");
@@ -417,17 +417,17 @@ function load_history_information(){
         var login_dialog_html = $('<div class="quick-login"></div>');
         var ref_url = document.location.href;
         login_dialog_html.append('<form class="bg" method="post" id="ajax_login" action="'+APP_SITE_URL+settings.action+'"></form>').find('form')
-        	.append('<input type="hidden" value="ok" name="form_submit">')
-        	.append('<input type="hidden" value="'+settings.formhash+'" name="formhash">')
-        	.append('<input type="hidden" value="'+settings.nchash+'" name="nchash">')
-        	.append('<dl><dt>用户名</dt><dd><input type="text" name="user_name" autocomplete="off" class="text"></dd></dl>')
-        	.append('<dl><dt>密&nbsp;&nbsp;&nbsp;码</dt><dd><input type="password" autocomplete="off" name="password" class="text"></dd></dl>')
-        	.append('<dl><dt>验证码</dt><dd><input type="text" size="10" maxlength="4" class="text fl w60" name="captcha"><img border="0" onclick="this.src=\''+APP_SITE_URL+'/index.php?act=seccode&amp;op=makecode&amp;nchash='+settings.nchash+'&amp;t=\' + Math.random()" name="codeimage" title="看不清，换一张" src="'+APP_SITE_URL+'/index.php?act=seccode&amp;op=makecode&amp;nchash='+settings.nchash+'" class="fl ml10"><span>不区分大小写</span></dd></dl>')
-        	.append('<ul><li>›&nbsp;如果您没有登录帐号，请先<a class="register" href="'+SHOP_SITE_URL+'/index.php?act=login&amp;op=register">注册会员</a>然后登录</li><li>›&nbsp;如果您<a class="forget" href="'+SHOP_SITE_URL+'/index.php?act=login&amp;op=forget_password">忘记密码</a>？，申请找回密码</li></ul>')
-        	.append('<div class="enter"><input type="submit" name="Submit" value="&nbsp;" class="submit"></div><input type="hidden" name="ref_url" value="'+ref_url+'">');
+            .append('<input type="hidden" value="ok" name="form_submit">')
+            .append('<input type="hidden" value="'+settings.formhash+'" name="formhash">')
+            .append('<input type="hidden" value="'+settings.nchash+'" name="nchash">')
+            .append('<dl><dt>用户名</dt><dd><input type="text" name="user_name" autocomplete="off" class="text"></dd></dl>')
+            .append('<dl><dt>密&nbsp;&nbsp;&nbsp;码</dt><dd><input type="password" autocomplete="off" name="password" class="text"></dd></dl>')
+            .append('<dl><dt>验证码</dt><dd><input type="text" size="10" maxlength="4" class="text fl w60" name="captcha"><img border="0" onclick="this.src=\''+APP_SITE_URL+'/index.php?act=seccode&amp;op=makecode&amp;nchash='+settings.nchash+'&amp;t=\' + Math.random()" name="codeimage" title="看不清，换一张" src="'+APP_SITE_URL+'/index.php?act=seccode&amp;op=makecode&amp;nchash='+settings.nchash+'" class="fl ml10"><span>不区分大小写</span></dd></dl>')
+            .append('<ul><li>›&nbsp;如果您没有登录帐号，请先<a class="register" href="'+SHOP_SITE_URL+'/index.php?act=login&amp;op=register">注册会员</a>然后登录</li><li>›&nbsp;如果您<a class="forget" href="'+SHOP_SITE_URL+'/index.php?act=login&amp;op=forget_password">忘记密码</a>？，申请找回密码</li></ul>')
+            .append('<div class="enter"><input type="submit" name="Submit" value="&nbsp;" class="submit"></div><input type="hidden" name="ref_url" value="'+ref_url+'">');
 
         login_dialog_html.find('input[type="submit"]').click(function(){
-        	ajaxpost('ajax_login', '', '', 'onerror');
+            ajaxpost('ajax_login', '', '', 'onerror');
         });
         html_form("form_dialog_login", "登录", login_dialog_html, 360);
     };
@@ -534,141 +534,141 @@ function load_history_information(){
  * $('a[nctype="mcard"]').membershipCard();
  */
 (function($){
-	$.fn.membershipCard = function(options){
-		var defaults = {
-				type:''			// params  shop/circle/cms/micorshop
-			};
-		options = $.extend(defaults,options);
-		return this.each(function(){
-			var $this = $(this);
-			var data_str = $(this).attr('data-param');eval('data_str = '+data_str);
-			var _uri = SITEURL+'/index.php?act=member_card&callback=?&uid='+data_str.id+'&from='+options.type;
-			$this.qtip({
-	            content: {
-	                text: 'Loading...',
-	                ajax: {
-	                    url: _uri,
-		                type: 'GET',
-		                dataType: 'jsonp',
-		                success: function(data) {
-		                	if(data){
-		                		var _dl = $('<dl></dl>');
-		                		// sex
-		                		$('<dt class="member-id"></dt>').append('<i class="sex'+data.sex+'"></i>')
-		                			.append('<a href="'+SHOP_SITE_URL+'/index.php?act=member_snshome&mid='+data.id+'" target="_blank">'+data.name+'</a>'+(data.truename != ''?'('+data.truename+')':''))
-		                			.appendTo(_dl);
-		                		// avatar
-		                		$('<dd class="avatar"><a href="'+SHOP_SITE_URL+'/index.php?act=member_snshome&mid='+data.id+'" target="_blank"><img src="'+data.avatar+'" /></a><dd>')
-		                			.appendTo(_dl);
-		                		// info
-		                		var _info = '';
-		                		if(typeof connect !== 'undefined' && connect === 1 && data.follow != 2){
-		                			var class_html = 'chat_offline';
-		                			var text_html = '离线';
-		                			if (typeof user_list[data.id] !== 'undefined' && user_list[data.id]['online'] > 0 ) {
-		                				class_html = 'chat_online';
-		                				text_html = '在线';
-		                			}
-		                			_info += '<a class="chat '+class_html+'" title="点击这里给我发消息" href="JavaScript:chat('+data.id+');">'+text_html+'</a>';
-		                		}
-		                		if(data.qq != ''){
-		                			_info += '<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin='+data.qq+'&site=qq&menu=yes" title="QQ: '+data.qq+'"><img border="0" src="http://wpa.qq.com/pa?p=2:'+data.qq+':52" style=" vertical-align: middle;"/></a>';
-		                		}
-		                		if(data.ww != ''){
-		                			_info += '<a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&amp;uid='+data.ww+'&site=cntaobao&s=1&charset='+_CHARSET+'" ><img border="0" src="http://amos.im.alisoft.com/online.aw?v=2&uid='+data.ww+'&site=cntaobao&s=2&charset='+_CHARSET+'" alt="点击这里给我发消息" style=" vertical-align: middle;"/></a>';
-		                		}
-		                		if(_info == ''){
-		                			_info = '--';
-		                		}
-		                		var _ul = $('<ul></ul>').append('<li>城市：'+((data.areainfo != null)?data.areainfo:'--')+'</li>')
-		                			.append('<li>生日：'+((data.birthday != null)?data.birthday:'--')+'</li>')
-		                			.append('<li>联系：'+_info+'</li>').appendTo('<dd class="info"></dd>').parent().appendTo(_dl);
-		                		// ajax info
-		                		if(data.url != ''){
-			                		$.getJSON(data.url+'/index.php?act=member_card&op=mcard_info&uid='+data.id, function(d){
-			                			if(d){
-			                				eval('var msg = '+options.type+'_function(d);');
-			                				msg.appendTo(_dl);
-			                			}
-			                		});
-			                		data.url = '';
-			                	}
+    $.fn.membershipCard = function(options){
+        var defaults = {
+                type:''         // params  shop/circle/cms/micorshop
+            };
+        options = $.extend(defaults,options);
+        return this.each(function(){
+            var $this = $(this);
+            var data_str = $(this).attr('data-param');eval('data_str = '+data_str);
+            var _uri = SITEURL+'/index.php?act=member_card&callback=?&uid='+data_str.id+'&from='+options.type;
+            $this.qtip({
+                content: {
+                    text: 'Loading...',
+                    ajax: {
+                        url: _uri,
+                        type: 'GET',
+                        dataType: 'jsonp',
+                        success: function(data) {
+                            if(data){
+                                var _dl = $('<dl></dl>');
+                                // sex
+                                $('<dt class="member-id"></dt>').append('<i class="sex'+data.sex+'"></i>')
+                                    .append('<a href="'+SHOP_SITE_URL+'/index.php?act=member_snshome&mid='+data.id+'" target="_blank">'+data.name+'</a>'+(data.truename != ''?'('+data.truename+')':''))
+                                    .appendTo(_dl);
+                                // avatar
+                                $('<dd class="avatar"><a href="'+SHOP_SITE_URL+'/index.php?act=member_snshome&mid='+data.id+'" target="_blank"><img src="'+data.avatar+'" /></a><dd>')
+                                    .appendTo(_dl);
+                                // info
+                                var _info = '';
+                                if(typeof connect !== 'undefined' && connect === 1 && data.follow != 2){
+                                    var class_html = 'chat_offline';
+                                    var text_html = '离线';
+                                    if (typeof user_list[data.id] !== 'undefined' && user_list[data.id]['online'] > 0 ) {
+                                        class_html = 'chat_online';
+                                        text_html = '在线';
+                                    }
+                                    _info += '<a class="chat '+class_html+'" title="点击这里给我发消息" href="JavaScript:chat('+data.id+');">'+text_html+'</a>';
+                                }
+                                if(data.qq != ''){
+                                    _info += '<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin='+data.qq+'&site=qq&menu=yes" title="QQ: '+data.qq+'"><img border="0" src="http://wpa.qq.com/pa?p=2:'+data.qq+':52" style=" vertical-align: middle;"/></a>';
+                                }
+                                if(data.ww != ''){
+                                    _info += '<a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&amp;uid='+data.ww+'&site=cntaobao&s=1&charset='+_CHARSET+'" ><img border="0" src="http://amos.im.alisoft.com/online.aw?v=2&uid='+data.ww+'&site=cntaobao&s=2&charset='+_CHARSET+'" alt="点击这里给我发消息" style=" vertical-align: middle;"/></a>';
+                                }
+                                if(_info == ''){
+                                    _info = '--';
+                                }
+                                var _ul = $('<ul></ul>').append('<li>城市：'+((data.areainfo != null)?data.areainfo:'--')+'</li>')
+                                    .append('<li>生日：'+((data.birthday != null)?data.birthday:'--')+'</li>')
+                                    .append('<li>联系：'+_info+'</li>').appendTo('<dd class="info"></dd>').parent().appendTo(_dl);
+                                // ajax info
+                                if(data.url != ''){
+                                    $.getJSON(data.url+'/index.php?act=member_card&op=mcard_info&uid='+data.id, function(d){
+                                        if(d){
+                                            eval('var msg = '+options.type+'_function(d);');
+                                            msg.appendTo(_dl);
+                                        }
+                                    });
+                                    data.url = '';
+                                }
 
-		                		// bottom
-		                		var _bottom;
-		                		if(data.follow != 2){
-			                		_bottom = $('<div class="bottom"></div>');
-		                			var _a;
-		                			if(data.follow == 1){
-		                				$('<div class="follow-handle" nctype="follow-handle'+data.id+'" data-param="{\'mid\':'+data.id+'}"></div>')
-		                					.append('<a href="javascript:void(0);" >已关注</a>')
-		                					.append('<a href="javascript:void(0);" nctype="nofollow">取消关注</a>').find('a[nctype="nofollow"]').click(function(){
-		                						onfollow($(this));
-		                					}).end().appendTo(_bottom);
-		                			}else{
-		                				$('<div class="follow-handle" nctype="follow-handle'+data.id+'" data-param="{\'mid\':'+data.id+'}"></div>')
-		                					.append('<a href="javascript:void(0);" nctype="follow">加关注</a>').find('a[nctype="follow"]').click(function(){
-		                						follow($(this));
-		                					}).end().appendTo(_bottom);
-		                			}
-		                			$('<div class="send-msg"> <a href="'+SHOP_SITE_URL+'/index.php?act=member_message&op=sendmsg&member_id='+data.id+'" target="_blank"><i></i>站内信</a> </div>').appendTo(_bottom);
-		                		}
+                                // bottom
+                                var _bottom;
+                                if(data.follow != 2){
+                                    _bottom = $('<div class="bottom"></div>');
+                                    var _a;
+                                    if(data.follow == 1){
+                                        $('<div class="follow-handle" nctype="follow-handle'+data.id+'" data-param="{\'mid\':'+data.id+'}"></div>')
+                                            .append('<a href="javascript:void(0);" >已关注</a>')
+                                            .append('<a href="javascript:void(0);" nctype="nofollow">取消关注</a>').find('a[nctype="nofollow"]').click(function(){
+                                                onfollow($(this));
+                                            }).end().appendTo(_bottom);
+                                    }else{
+                                        $('<div class="follow-handle" nctype="follow-handle'+data.id+'" data-param="{\'mid\':'+data.id+'}"></div>')
+                                            .append('<a href="javascript:void(0);" nctype="follow">加关注</a>').find('a[nctype="follow"]').click(function(){
+                                                follow($(this));
+                                            }).end().appendTo(_bottom);
+                                    }
+                                    $('<div class="send-msg"> <a href="'+SHOP_SITE_URL+'/index.php?act=member_message&op=sendmsg&member_id='+data.id+'" target="_blank"><i></i>站内信</a> </div>').appendTo(_bottom);
+                                }
 
-		                		var _content = $('<div class="member-card"></div>').append(_dl).append(_bottom);
-			                    this.set('content.text', ' ');this.set('content.text', _content);
-		                	}
-		                }
-	                }
-	            },
-	            position: {
-	                viewport: $(window)
-	            },
-	            hide: {
-					fixed: true,
-					delay: 300
-				},
-	            style: 'qtip-wiki'
-	         });
-		});
-		function follow(o){
-			var data_str = o.parent().attr('data-param');
-			eval( "data_str = "+data_str);
-			$.getJSON(SHOP_SITE_URL+'/index.php?act=member_snsfriend&op=addfollow&callback=?&mid='+data_str.mid, function(data){
-				if(data){
-					$('[nctype="follow-handle'+data_str.mid+'"]').html('<a href="javascript:void(0);" >已关注</a> <a href="javascript:void(0);" nctype="nofollow">取消关注</a>').find('a[nctype="nofollow"]').click(function(){
-						onfollow($(this));
-					});
-				}
-			});
-		}
-		function onfollow(o){
-			var data_str = o.parent().attr('data-param');
-			eval( "data_str = "+data_str);
-			$.getJSON(SHOP_SITE_URL+'/index.php?act=member_snsfriend&op=delfollow&callback=?&mid='+data_str.mid, function(data){
-				if(data){
-					$('[nctype="follow-handle'+data_str.mid+'"]').html('<a href="javascript:void(0);" nctype="follow">加关注</a>').find('a[nctype="follow"]').click(function(){
-						follow($(this));
-					});
-				}
-			});
-		}
-		function shop_function(d){
-			return $('<dd class="ajax-info">买家信用：'+((d.member_credit == 0)?'暂无信用':d.member_credit)+'</dd>');
-		}
-		function circle_function(d){
-			var rs = $('<dd class="ajax-info"></dd>');
-			$.each(d,function(i, n){
-				rs.append('<div class="rank-div" title="'+n.circle_name+'圈等级'+n.cm_level+'，经验值'+n.cm_exp+'"><a href="'+CIRCLE_SITE_URL+'/index.php?act=group&c_id='+n.circle_id+'" target="_blank">'+n.circle_name+'</a><i></i><em class="rank-em rank-'+n.cm_level+'">'+n.cm_level+'</em></div>');
-			});
-			return rs;
-		}
-		function microshop_function(d){
-			var rs = $('<dd class="ajax-info"></dd>');
+                                var _content = $('<div class="member-card"></div>').append(_dl).append(_bottom);
+                                this.set('content.text', ' ');this.set('content.text', _content);
+                            }
+                        }
+                    }
+                },
+                position: {
+                    viewport: $(window)
+                },
+                hide: {
+                    fixed: true,
+                    delay: 300
+                },
+                style: 'qtip-wiki'
+             });
+        });
+        function follow(o){
+            var data_str = o.parent().attr('data-param');
+            eval( "data_str = "+data_str);
+            $.getJSON(SHOP_SITE_URL+'/index.php?act=member_snsfriend&op=addfollow&callback=?&mid='+data_str.mid, function(data){
+                if(data){
+                    $('[nctype="follow-handle'+data_str.mid+'"]').html('<a href="javascript:void(0);" >已关注</a> <a href="javascript:void(0);" nctype="nofollow">取消关注</a>').find('a[nctype="nofollow"]').click(function(){
+                        onfollow($(this));
+                    });
+                }
+            });
+        }
+        function onfollow(o){
+            var data_str = o.parent().attr('data-param');
+            eval( "data_str = "+data_str);
+            $.getJSON(SHOP_SITE_URL+'/index.php?act=member_snsfriend&op=delfollow&callback=?&mid='+data_str.mid, function(data){
+                if(data){
+                    $('[nctype="follow-handle'+data_str.mid+'"]').html('<a href="javascript:void(0);" nctype="follow">加关注</a>').find('a[nctype="follow"]').click(function(){
+                        follow($(this));
+                    });
+                }
+            });
+        }
+        function shop_function(d){
+            return $('<dd class="ajax-info">买家信用：'+((d.member_credit == 0)?'暂无信用':d.member_credit)+'</dd>');
+        }
+        function circle_function(d){
+            var rs = $('<dd class="ajax-info"></dd>');
+            $.each(d,function(i, n){
+                rs.append('<div class="rank-div" title="'+n.circle_name+'圈等级'+n.cm_level+'，经验值'+n.cm_exp+'"><a href="'+CIRCLE_SITE_URL+'/index.php?act=group&c_id='+n.circle_id+'" target="_blank">'+n.circle_name+'</a><i></i><em class="rank-em rank-'+n.cm_level+'">'+n.cm_level+'</em></div>');
+            });
+            return rs;
+        }
+        function microshop_function(d){
+            var rs = $('<dd class="ajax-info"></dd>');
             rs.append('<span class="ajax-info-microshop">随心看：' + d.goods_count + '</span>');
             rs.append('<span class="ajax-info-microshop">个人秀：' + d.personal_count + '</span>');
-			return rs;
-		}
-	};
+            return rs;
+        }
+    };
 })(jQuery);
 
 /*
@@ -770,12 +770,12 @@ function addcart(goods_id,quantity,callbackfunc) {
     $.getJSON(url, {'goods_id':goods_id, 'quantity':quantity}, function(data) {
         if (data != null) {
             if (data.state) {
-            	if(callbackfunc){
-            		eval(callbackfunc + "(data)");
-            	}
+                if(callbackfunc){
+                    eval(callbackfunc + "(data)");
+                }
                 // 头部加载购物车信息
                 load_cart_information();
-				$('#rtoolbar_cartlist').load('index.php?act=cart&op=ajax_load&type=html')
+                $('#rtoolbar_cartlist').load('index.php?act=cart&op=ajax_load&type=html')
             } else {
                 alert(data.msg);
             }

@@ -21,7 +21,6 @@ class indexControl extends SystemControl{
 		Tpl::output('top_nav',$top_nav);
 		Tpl::output('left_nav',$left_nav);
 		Tpl::output('map_nav',$map_nav);
-
 		Tpl::showpage('index','index_layout');
 	}
 

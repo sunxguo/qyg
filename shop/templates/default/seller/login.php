@@ -98,7 +98,7 @@ $(document).ready(function() {
             }
         }
     });
-	//Hide Show verification code
+  //Hide Show verification code
     $("#hide").click(function(){
         $(".code").fadeOut("slow");
     });
@@ -144,7 +144,7 @@ $(document).ready(function() {
         <div class="code-img"><a href="javascript:void(0)" nctype="btn_change_seccode"><img src="index.php?act=seccode&op=makecode&nchash=<?php echo $output['nchash'];?>" name="codeimage" border="0" id="codeimage"></a></div>
         <a href="JavaScript:void(0);" id="hide" class="close" title="<?php echo $lang['login_index_close_checkcode'];?>"><i></i></a> <a href="JavaScript:void(0);" class="change" nctype="btn_change_seccode" title="<?php echo $lang['login_index_change_checkcode'];?>"><i></i></a> </div>
       <span class="ico"><i class="icon-qrcode"></i></span>
-      <input type="submit" class="login-submit" value="商家登录">
+      <input type="submit" class="login-submit" value="商家登录"> 
     </div>
   </form>
 </div>

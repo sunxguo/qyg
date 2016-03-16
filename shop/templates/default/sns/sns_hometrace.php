@@ -1,6 +1,6 @@
 <?php defined('InShopNC') or exit('Access Invalid!');?>
 <style>
-<!--
+
 .release-tab { clear:both;}
 .release-tab li { display:inline-block; *display:inline;}
 .release-tab li em { /* background:url(../images/member/ncus_public.png) no-repeat scroll; */ _background-image: url(../images/ie6/ncus_public.gif)/*IE6*/; float:left; height: 26px; width: 26px;}
@@ -24,7 +24,7 @@
 .release-content .handle { position: absolute; z-index: 9; top:82px; right:230px;}
 .release-content .button { font-size:1.4em; line-height: 32px; font-weight:700; color:#FFF; background-color:#80B8D2; width:60px; height:32px; border:none; position: absolute; top: 80px; left: 500px; cursor:pointer;}
 .release-content input[type="button"]{ border-radius: 4px;}
--->
+
 </style>
 <div class="sidebar">
 <?php include template('sns/sns_sidebar_visitor');?>
