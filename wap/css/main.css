@@ -1,6 +1,6 @@
 body{font-size:1em;font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;color: #6d6d6d;}
 body, input, textarea, select, button, table{line-height: 1.25em;}
-body{min-width: 320px; width:100%;}
+body{min-width: 320px;}
 a{text-decoration: none;}
 .h22{height: 22px;}
 .h25{height:25px;}
@@ -88,7 +88,7 @@ a{text-decoration: none;}
 .whitedownarrow{background-position:-7px -230px;}
 
 /*serach-btn*/
-.search-btn{position: absolute;top: -1px;right: 0px;height: 32px;width: 50px;background-color: #FF8000;background-position:13px -123px;background-size: 60px auto;}
+.search-btn{position: absolute;top: -1px;right: 0px;height: 32px;width: 50px;background-color: #ff9a66;background-position:13px -123px;background-size: 60px auto;}
 /*pagination*/
 .pagination{text-align: center;}
 .pagination a{color: #6e6e6e;}
