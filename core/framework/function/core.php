@@ -31,6 +31,7 @@ function makeSeccode($nchash){
 		}
 	}
 	setNcCookie('seccode'.$nchash, encrypt(strtoupper($seccode)."\t".(time())."\t".$nchash,MD5_KEY),3600);
+	
 	return $seccode;
 }
 
@@ -2308,3 +2309,4 @@ function encryptShow($str,$start,$length) {
 function callback($state = true, $msg = '', $data = array()) {
     return array('state' => $state, 'msg' => $msg, 'data' => $data);
 }
+?>
