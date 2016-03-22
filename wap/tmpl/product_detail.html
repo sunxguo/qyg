@@ -11,6 +11,9 @@
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
 	<link rel="stylesheet" type="text/css" href="../css/child.css">
+	<style type="text/css">
+	   a:focus { outline: 0; }
+	</style>
 </head>
 <body>
 	<header id="header"></header>
@@ -241,7 +244,7 @@
 								<div class="opera-pd-item buy-now">F码购买</div>
 							<% } else { %>
 								<img src="../images/kefu_03.png" style="padding:0 3px 3px 0; height:30px;">
-								<a href="go_store.html?store_id=<%=goods_info.store_id%>"><img src="../images/dianpu.png" style=" padding-left:1px; border:none; height:30px;"></a>
+								<a href="go_store.html?store_id=<%=goods_info.store_id%>" onfocus="this.blur()"><img src="../images/dianpu.png" style=" padding-left:1px; border:none; height:30px;"></a>
 								<img src="../images/shoucang.png"  style="  border:none; height:30px;">
 								<div class="opera-pd-item buy-now ">立即购买</div>
 
