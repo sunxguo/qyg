@@ -1,10 +1,10 @@
 /*header*/
 .header-wrap{position: relative;background: #FFF ;z-index: 8888;height: 50px;}
 .header-back{position: absolute;top: 8px;left: 6px;width: 30px;height: 32px;}
-.header-back span{width: 30px;height: 33px;text-indent:-9999px;}
-.header-wrap h2{height: 50px;line-height: 50px;font-size: 16px;color: #000;text-align: center;}
+.header-back span{width: 20px;height: 20px;text-indent:-9999px; }
+.header-wrap h2{height: 40px;line-height: 40px;font-size: 16px;color: #000;text-align: center;}
 .i-main-opera{position: absolute;top: 8px;right: 7px;width: 37px;height: 37px;}
-.i-main-opera span{width: 40px;height: 40px}
+.i-main-opera span{width: 20px;height: 20px}
 .main-opera-pannel{border-bottom:1px solid #d0cece;background-color: #fff;display:none;}
 .main-op-table{display: table;width: 100%;}
 .main-op-table .quarter{width: 25%;padding: 9px 0px;display: table-cell;font-size: 12px;text-align: center;}
