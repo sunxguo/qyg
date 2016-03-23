@@ -231,7 +231,7 @@ div.iadd-item label .input-30{width: 58%;height:22px;line-height: 22px\9;}
 .ncs-info { width: 100%; background-color: #FFF; margin-bottom: 10px; margin:auto;}
 .ncs-info .title { background-color: #F5F5F5; padding: 5px 10px; border: solid 1px #E6E6E6;}
 .ncs-info .title h4 { font: 600 14px/20px arial,"microsoft yahei"; color: #555;}
-.ncs-info .scontent { border: solid #E6E6E6; border-width: 0 1px 1px;}
+.ncs-info .scontent { border: solid #E6E6E6; border-width: 0 1px 1px;   }
 .ncs-info .scontent dl { font-size: 0; *word-spacing:-1px/*IE6、7*/; display: block; border-bottom: solid 1px #E6E6E6; padding: 6px 0;}
 .ncs-info .scontent dl dt { font-size: 12px; color: #666; vertical-align: top; letter-spacing: normal; word-spacing: normal; text-align: right; display: inline-block;  *display: inline/*IE7*/; width: 68px; *zoom:1;}
 .ncs-info .scontent dl dd { font-size: 12px; color: #333; vertical-align: top; letter-spacing: normal; word-spacing: normal; white-space: nowrap; text-overflow: ellipsis; display: inline-block; *display: inline/*IE7*/; width: 130px; overflow: hidden; *zoom:1;}

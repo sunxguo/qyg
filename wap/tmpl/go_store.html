@@ -26,7 +26,9 @@
 
 	<div class="store_header" ></div>
 	<div id="product_detail_wp"></div>
+
 	<!-- 轮播图  放什么图 怎么获取 -->
+
 	<div class="content"  style="margin-bottom:8%;">
 		<div class="product-filter">
 			<a href="javascript:void(0);" class="clearfix current keyorder" key="4">
@@ -58,7 +60,6 @@
 			</div>
 		</div>
 
-		
 	</div>
 	<ul class="bd-tdashed-dd" style="position: fixed;bottom: 0px; padding-top:0px; height:7%; border-top:1px solid #aaaaaa; opera-product-wp appcan.window.resizePopoverByEle:content,0,titHeight,content;">
 			<li style="float:left; padding:10px 6%; width:20%; text-align:center; border-right:1px solid #aaaaaa; font-size:15px; font-family:SimHei; "><a href="product_first_categroy.html" style="color:#000;">宝贝分类</a></li>
@@ -81,13 +82,8 @@
 		<div class="title">
 			<h4><%=store_info.store_name%></h4>
 		</div>
-		<div class="scontent">
-		    <dl class="all-rate">
-		      <dt>综合评分：</dt>
-		      <dd>
-		        <div class="rating"><span style="width: <%=store_info.store_credit_percent%>%"></span></div>
-		        <em><%=store_info.store_credit_average%></em>分</dd>
-		    </dl>
+		<div class="scontent" >
+		    
 			<% if(store_info.store_qq!=""||store_info.store_phone!=""){%>
 		    <dl class="messenger">
 		      <dt>联系方式：</dt>
@@ -102,19 +98,12 @@
 		    </dl>
 			<%} %>
 
-		    <dl class="no-border">
-		      <dt>公司名称：</dt>
-		      <dd><%=store_info.store_company_name%></dd>
-		    </dl>
-		    <dl>
-		      <dt>所 在 地：</dt>
-		      <dd><%=store_info.area_info%></dd>
-		    </dl>
+		    
 		    </div>
 		</div>
 	</script>
 <script type="text/html" id="home_body">
-
+    
 	<% if(goods_list.length >0){%>
 		<ul class="product-list">
 			<%for(i=0;i<goods_list.length;i++){%>
