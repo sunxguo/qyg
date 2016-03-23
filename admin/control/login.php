@@ -40,7 +40,7 @@ class LoginControl extends SystemControl {
 				$array['admin_name']	= $_POST['user_name'];
 				$array['admin_password']= md5(trim($_POST['password']));
 				$admin_info = $model_admin->infoAdmin($array);
-				if(is_array($admin_info) and !empty($admin_info)) {
+				if(is_array($admin_info) and !empty($admin_info)){
 
 					$this->systemSetKey(array('name'=>$admin_info['admin_name'], 'id'=>$admin_info['admin_id'],'gid'=>$admin_info['admin_gid'],'sp'=>$admin_info['admin_is_super']));
 					$update_info	= array(

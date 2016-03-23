@@ -1,4 +1,3 @@
-
 /*!
  * bootstrap-progressbar v0.6.0 by @minddust
  * Copyright (c) 2012-2013 Stephan Gross
