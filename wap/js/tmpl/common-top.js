@@ -1,9 +1,9 @@
 $(function (){
 	var headTitle = document.title;
 	var tmpl = '<div class="header-wrap">'
-	        		+'<a href="javascript:history.back();" class="header-back" style="padding-left:3%;"><span>返回</span></a>'
-						+'<h2>'+headTitle+'</h2>'
-						+'<a href="javascript:void(0)" id="btn-opera" class="i-main-opera"  style="margin-right:0px;">'
+	        		+'<a href="javascript:history.back();" class="header-back" style="padding-left:3%; padding-top:2%;"><span>返回</span></a>'
+						+'<h2 style="padding-top:1.5%;">'+headTitle+'</h2>'
+						+'<a href="javascript:void(0)" id="btn-opera" class="i-main-opera"  style="margin-right:0px; padding-top:2%;">'
 					 	+'<span></span>'
 				 	+'</a>'
     			+'</div>'

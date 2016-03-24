@@ -300,7 +300,7 @@ class goodsControl extends mobileHomeControl{
 
         $goods_info =$model_goods->getGoodsInfoByID($goods_id, 'goods_id');
         $goods_common_info =$model_goods->getMobileBodyByCommonID($goods_info['goods_commonid']);
-        Tpl:output('goods_common_info',$goods_common_info);
+        Tpl::output('goods_common_info',$goods_common_info);
         Tpl::showpage('goods_body');
     }
 }

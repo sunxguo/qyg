@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width" name="viewport">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" /> 
 	<title>商品详情</title>
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -14,9 +14,14 @@
 	
 	<style type="text/css">
 	   a:focus { outline: 0; }
+	   a.hidefocus{outline:none;}
+	   a img {
+			   border:0px;
+			}
+
 	</style>
 </head>
-<body>
+<body style="resize: none;">
 	<header id="header"></header>
 	<div id="product_detail_wp"></div>
 	
@@ -244,9 +249,9 @@
 							<% } else if (goods_info.is_fcode == '1') { %>
 								<div class="opera-pd-item buy-now">F码购买</div>
 							<% } else { %>
-								<img src="../images/kefu_03.png" style="padding:0 3px 3px 0; height:30px;">
-								<a href="go_store.html?store_id=<%=goods_info.store_id%>" onfocus="this.blur()"><img src="../images/dianpu.png" style=" padding-left:1px; border:none; height:30px;"></a>
-								<img src="../images/shoucang.png"  style="  border:none; height:30px;">
+								<div style="margin-top:1%;"><img src="../images/kefu_03.png" style="padding:0 3px 3px 0; height:30px;"></div>
+								<a href="go_store.html?store_id=<%=goods_info.store_id%>" style="margin-top:2%;"><img src="../images/dianpu.png" border="0" style=" padding-left:1px;  height:30px;"></a>
+								<div id="pd-collects" style="margin-top:1.5%; "><img src="../images/shoucang.png"  style="  border:none; height:30px;"></div>
 								<div class="opera-pd-item buy-now ">立即购买</div>
 
 								<%if(goods_info.promotion_type!='groupbuy'){%>

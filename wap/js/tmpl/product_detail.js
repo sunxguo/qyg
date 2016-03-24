@@ -175,6 +175,40 @@ $(function (){
                   });
                 }
             });
+
+//收藏
+            $("#pd-collects").click(function (){
+                var key = getcookie('key');//登录标记
+                if(key==''){
+                  window.location.href = WapSiteUrl+'/tmpl/member/login.html';
+                }else {
+                  $.ajax({
+                    url:ApiUrl+"/index.php?act=member_favorites&op=favorites_add",
+                    type:"post",
+                    dataType:"json",
+                    data:{goods_id:goods_id,key:key},
+                    success:function (fData){
+                     if(checklogin(fData.login)){
+                        if(!fData.datas.error){
+                          $.sDialog({
+                            skin:"green",
+                            content:"收藏成功！",
+                            okBtn:false,
+                            cancelBtn:false
+                          });
+                        }else{
+                          $.sDialog({
+                            skin:"red",
+                            content:fData.datas.error,
+                            okBtn:false,
+                            cancelBtn:false
+                          });
+                        }
+                      }
+                    }
+                  });
+                }
+            });
             //加入购物车
             $(".add-to-cart").click(function (){
               var key = getcookie('key');//登录标记
