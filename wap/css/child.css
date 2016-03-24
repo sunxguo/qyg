@@ -238,7 +238,7 @@ div.iadd-item label .input-30{width: 58%;height:22px;line-height: 22px\9;}
 .ncs-info .all-rate .rating { background: url(../images/2014grate.png) no-repeat 0 -18px ; vertical-align: middle; display: inline-block;  *display: inline/*IE7*/; width: 79px; height: 17px; *zoom:1;}
 .ncs-info .all-rate .rating span { background: url(../images/2014grate.png) no-repeat 100% 0; display: block; height: 18px;}
 .ncs-info .all-rate em { color: #DA542E; font-weight: 600; vertical-align: middle; margin-right: 2px;}
-.ncs-info .content .detail-rate { clear: both;}
+.ncs-info .content .detail-rate { clear: both; width:360px;}
 .ncs-info .store-name { font-weight: 600; color: #555; height: 20px; padding: 6px 9px; border-bottom: solid 1px #E6E6E6;}
 .ncs-info .detail-rate { color: #999; padding: 5px; border-bottom: dotted 1px #E6E6E6;}
 .ncs-info .detail-rate .credit { color: #555; display: inline-block; width: 35px; margin-left: 4px;}

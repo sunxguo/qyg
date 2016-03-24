@@ -16,9 +16,19 @@
 	<style type="text/css">
 	   a:focus { outline: 0; }
 	   a.hidefocus{outline:none;}
-	   a img {
-			   border:0px;
+	   a:hover｛text-decoration:none
+｝
+	   img {
+			   
 			}
+		img	.transparent{
+
+			border:0px;
+						filter:alpha(opacity=0);
+						-moz-opacity:0.5;
+						-khtml-opacity: 0.5;
+						opacity: 0.5;
+						}
 
 	</style>
 </head>
@@ -231,14 +241,14 @@
 							</div>
 						</li>
 
-						<div class="content">
+						<div width="500px">
 					        <div class="pddetail-cnt">
 					            <div class="pd-detail-tab">
 					                <div  id="fixed-tab-pannel">
 					                     <div class="fixed-tab-pannel"></div>
 					                </div>
 					            </div>
-					        </div>
+					        </div>	
 					    </div>
 
 						<li class="bd-tdashed-dd" style="position: fixed;bottom: -24px; padding-top:0px;">
@@ -251,7 +261,7 @@
 								<div class="opera-pd-item buy-now">F码购买</div>
 							<% } else { %>
 								<div style="margin-top:1%;"><img src="../images/kefu_03.png" style="padding:0 3px 3px 0; height:30px;"></div>
-								<a href="go_store.html?store_id=<%=goods_info.store_id%>" style="margin-top:2%;"><img src="../images/dianpu.png" border="0" style=" padding-left:1px;  height:30px;"></a>
+								<a href="go_store.html?store_id=<%=goods_info.store_id%>" style="margin-top:2%;"><img src="../images/dianpu.png"  style=" padding-left:1px; border:0px;  height:30px;"></a>
 								<div id="pd-collects" style="margin-top:1.5%; "><img src="../images/shoucang.png"  style="  border:none; height:30px;"></div>
 								<div class="opera-pd-item buy-now ">立即购买</div>
 
