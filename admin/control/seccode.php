@@ -3,12 +3,13 @@
  * 验证码
  ***/
 
+
 defined('InShopNC') or exit('Access Invalid!');
 
 class seccodeControl{
-
 	public function __construct(){
 	}
+
 	/**
 	 * 产生验证码
 	 *
