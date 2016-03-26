@@ -140,7 +140,7 @@
     .pddetail-cnt .fixed-tab-pannel img,.product-infor li img{width: 320px;}
 } 
 @media screen and (min-width: 640px){
-    .pddetail-cnt .fixed-tab-pannel img,.product-infor li img{width: 640px;}
+    .pddetail-cnt .fixed-tab-pannel img,.product-infor li img{width: 100px;}
 }
 
 .pddc-commend-list{padding-bottom: 10px;}
