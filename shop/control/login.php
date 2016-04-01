@@ -32,12 +32,16 @@ class loginControl extends BaseHomeControl {
 		}
 		$result = chksubmit(true,C('captcha_status_login'),'num');
 		if ($result !== false){
-			if ($result === -11){
+			if ($result === -11)
+			{
 				showDialog($lang['login_index_login_illegal'],'','error',$script);
-			}elseif ($result === -12){
+			}
+			elseif ($result === -12)
+			{
 				showDialog($lang['login_index_wrong_checkcode'],'','error',$script);
 			}
-			if (process::islock('login')) {
+			if(process::islock('login'))
+			{
 				showDialog($lang['nc_common_op_repeat'],SHOP_SITE_URL,'','error',$script);
 			}
 			$obj_validate = new Validate();
@@ -53,7 +57,7 @@ class loginControl extends BaseHomeControl {
 			$array['member_name']	= $_POST['user_name'];
 			$array['member_passwd']	= md5($_POST['password']);
 			$member_info = $model_member->getMemberInfo($array);
-			if(is_array($member_info) and !empty($member_info)) {
+			if(is_array($member_info) and !empty($member_info)){
 				if(!$member_info['member_state']){
 			        showDialog($lang['login_index_account_stop'],''.'error',$script);
 				}
@@ -64,10 +68,10 @@ class loginControl extends BaseHomeControl {
     		$model_member->createSession($member_info);
 			process::clear('login');
 
-			// cookie中的cart存入数据库
+			//cookie中的cart存入数据库
 			Model('cart')->mergecart($member_info,$_SESSION['store_id']);
 
-			// cookie中的浏览记录存入数据库
+			//cookie中的浏览记录存入数据库
 			Model('goods_browse')->mergebrowse($_SESSION['member_id'],$_SESSION['store_id']);
 
 			if ($_GET['inajax'] == 1){
@@ -128,7 +132,8 @@ class loginControl extends BaseHomeControl {
 	 * @param
 	 * @return
 	 */
-	public function registerOp() {
+	public function registerOp() 
+	{
 		//zmr>v30
 		$zmr=intval($_GET['zmr']);
 		if($zmr>0)
@@ -137,7 +142,7 @@ class loginControl extends BaseHomeControl {
 		}
 		
 		Language::read("home_login_register");
-		$lang	= Language::getLangContent();
+		$lang = Language::getLangContent();
 		$model_member	= Model('member');
 		$model_member->checkloginMember();
 		Tpl::output('html_title',C('site_name').' - '.$lang['login_register_join_us']);
@@ -150,7 +155,7 @@ class loginControl extends BaseHomeControl {
 	 * @param
 	 * @return
 	 */
-	public function usersaveOp() {
+	public function usersaveOp(){
 		//重复注册验证
 		if (process::islock('reg')){
 			showDialog(Language::get('nc_common_op_repeat'));
@@ -160,15 +165,28 @@ class loginControl extends BaseHomeControl {
 		$model_member	= Model('member');
 		$model_member->checkloginMember();
 		$result = chksubmit(true,C('captcha_status_register'),'num');
+		//var_dump($result);exit;
 		if ($result){
 			if ($result === -11){
 				showDialog($lang['invalid_request'],'','error');
-			}elseif ($result === -12){
-				showDialog($lang['login_usersave_wrong_code'],'','error');
 			}
-		} else {
+			// elseif ($result === -12){
+			// 	showDialog($lang['login_usersave_wrong_code'],'','error');
+			// }
+		} 
+		else 
+		{
 		    showDialog($lang['invalid_request'],'','error');
-		}
+		}	
+    	if(!preg_match("/^1[34578]\d{9}$/", $_POST['user_name']))
+    	{
+    		showDialog('请输入正确格式的手机号','','error');
+    	}
+    	if($_POST['code'] != $_SESSION['mcode'])
+    	{
+    		showDialog('验证码错误','','error');
+    	}
+
         $register_info = array();
         $register_info['username'] = $_POST['user_name'];
         $register_info['password'] = $_POST['password'];
@@ -200,8 +218,49 @@ class loginControl extends BaseHomeControl {
 			redirect($_POST['ref_url']);
         } else {
 			showDialog($member_info['error']);
-        }
+        }   	
 	}
+
+	public function sendnoteOp()
+		{
+            $phone=$_POST['phone'];
+            // $phone=$phonees['phone'];
+		    $mcode = ""; 
+		    for ($i = 0; $i < 6; $i++){
+		        $mcode .= rand(0, 9); 
+		    } 
+		    header("content-type:text/html; charset=utf-8;");
+		    session_start();//开启缓存
+		    if (isset($_SESSION['time']))//判断缓存时间
+		    {
+		        session_id();
+		        $_SESSION['time'];
+		    }
+		    else
+		    {
+		        $_SESSION['time'] = date("Y-m-d H:i:s");
+		    }
+		    $_SESSION['mcode']=$mcode;//将content的值保存在session中
+		    $statusStr = array(
+		            "0" => "短信发送成功",
+		            "-1" => "参数不全",
+		            "-2" => "服务器空间不支持,请确认支持curl或者fsocket，联系您的空间商解决或者更换空间！",
+		            "30" => "密码错误",
+		            "40" => "账号不存在",
+		            "41" => "余额不足",
+		            "42" => "帐户已过期",
+		            "43" => "IP地址限制",
+		            "50" => "内容含有敏感词"
+		        );  
+			$smsapi = "http://www.smsbao.com/"; //短信网关
+			$user = "quanyougou"; //短信平台帐号
+			$pass = md5("quanyougou123"); //短信平台密码
+			$content="【全优购】本次验证码为".$mcode;//要发送的短信内容
+			// $phone =;
+			$sendurl = $smsapi."sms?u=".$user."&p=".$pass."&m=".$phone."&c=".urlencode($content);
+			$result =file_get_contents($sendurl) ;
+			//return $result;
+		}
 	/**
 	 * 会员名称检测
 	 *
@@ -213,7 +272,7 @@ class loginControl extends BaseHomeControl {
 		 	* 实例化模型
 		 	*/
 			$model_member	= Model('member');
-
+            
 			$check_member_name	= $model_member->getMemberInfo(array('member_name'=>$_GET['user_name']));
 			if(is_array($check_member_name) and count($check_member_name)>0) {
 				echo 'false';

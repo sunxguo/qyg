@@ -32,7 +32,7 @@
       <li>邮件模板</li>
     </ul>
     <!-- 站内信 S -->
-    <form class="tab-content" method="post" name="message_form" >
+    <form class="tab-content" method="post" name="message_form">
       <input type="hidden" name="form_submit" value="ok" />
       <input type="hidden" name="code" value="<?php echo $output['smtpl_info']['smt_code'];?>" />
       <input type="hidden" name="type" value="message" />

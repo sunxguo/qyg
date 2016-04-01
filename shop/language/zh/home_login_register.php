@@ -88,4 +88,5 @@ $lang['login_password_input_email']			= '請輸入郵箱地址';
 $lang['login_password_email_not_exists']	= '郵箱地址錯誤';
 $lang['login_password_email_fail']			= '郵件發送超時，請重新申請';
 $lang['login_password_email_success']		= '郵件已經發出，請查收';
+ // /^0{0,1}(13[0-9]|15[7-9]|153|156|18[7-9])[0-9]{8}$/
 ?>
