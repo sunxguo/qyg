@@ -1,5 +1,5 @@
 <?php defined('InShopNC') or exit('Access Invalid!');?>
-<?php //echo getChat($layout);?>
+<?php echo getChat($layout);?>
 <div id="faq">
   <div class="faq-wrapper">
     <?php if(is_array($output['article_list']) && !empty($output['article_list'])){ ?><ul>
