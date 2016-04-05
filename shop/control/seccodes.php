@@ -13,10 +13,10 @@
     !$width && $width = $num * $size * 4 / 5 + 5;
     !$height && $height = $size + 10; 
     // 去掉了 0 1 O l 等
-    $str = "23456789abcdefghijkmnpqrstuvwxyz";
+    
     $code = '';
     for ($i = 0; $i < $num; $i++) {
-        $code .= $str[mt_rand(0, strlen($str)-1)];
+        $code .= rand(0, 9);
     } 
     // 画图像
     $im = imagecreatetruecolor($width, $height); 
