@@ -240,6 +240,7 @@ class loginControl extends BaseHomeControl {
 		    {
 		        $_SESSION['time'] = date("Y-m-d H:i:s");
 		    }
+		    unset($_SESSION["mcode"]);
 		    $_SESSION['mcode']=$mcode;//将content的值保存在session中
 		    $statusStr = array(
 		            "0" => "短信发送成功",
@@ -259,7 +260,7 @@ class loginControl extends BaseHomeControl {
 			// $phone =;
 			$sendurl = $smsapi."sms?u=".$user."&p=".$pass."&m=".$phone."&c=".urlencode($content);
 			$result =file_get_contents($sendurl) ;
-			//return $result;
+			return $_SESSION['mcode'];
 		}
 	/**
 	 * 会员名称检测
