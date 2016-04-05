@@ -41,7 +41,7 @@
         </dl>
         
         <dl>
-          <dt><?php echo $lang['login_index_checkcode'];?></dt>
+          <dt><?php echo $lang['login_index_checkcode'];?> <?php echo $_SESSION["VerifyCode"]?> </dt>
           <dd style="min-height:54px;">
               <input type="text" name="captcha" autocomplete="off" class="text w50 fl" id="captcha" maxlength="4" size="10" />
             <img src="<?php echo SHOP_SITE_URL?>/control/seccodes.php" name="codeimage" border="0" id="codeimage" / > <a href="javascript:void(0)" class="ml5" onclick="javascript:document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/control/seccodes.php?>&t=' + Math.random();"><?php echo $lang['login_index_change_checkcode'];?></a>
@@ -91,7 +91,7 @@ $(document).ready(function(){
 		rules: {
 			user_name: "required",
 			password: "required"
-			<?php if(C('captcha_status_login') == '1') { ?>
+			
             ,captcha : {
                 required : true,
                 remote   : {
@@ -109,7 +109,7 @@ $(document).ready(function(){
                     }
                 }
             }
-			<?php } ?>
+			
 		},
 		messages: {
 			user_name: "<?php echo $lang['login_index_input_username'];?>",
