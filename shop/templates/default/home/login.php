@@ -39,7 +39,7 @@
             <label></label>
           </dd>
         </dl>
-        <?php if(C('captcha_status_login') == '1') { ?>
+        
         <dl>
           <dt><?php echo $lang['login_index_checkcode'];?></dt>
           <dd style="min-height:54px;">
@@ -48,7 +48,7 @@
             <label></label>
           </dd>
         </dl>
-        <?php } ?>
+        
         <dl>
           <dt>&nbsp;</dt>
           <dd>
@@ -95,7 +95,7 @@ $(document).ready(function(){
             ,captcha : {
                 required : true,
                 remote   : {
-                    url : '<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=check&nchash=<?php echo getNchash();?>',
+                    url : '<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=check?>',
                     type: 'get',
                     data:{
                         captcha : function(){
@@ -104,7 +104,7 @@ $(document).ready(function(){
                     },
                     complete: function(data) {
                         if(data.responseText == 'false') {
-                        	document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>&t=' + Math.random();
+                        	document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/control/seccodes.php?>&t=' + Math.random();
                         }
                     }
                 }

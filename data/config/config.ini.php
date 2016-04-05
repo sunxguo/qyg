@@ -31,7 +31,7 @@ $config['db']['1']['dbcharset']    = 'UTF-8';
 /*
 本地文件链接服务器的数据库
 $config['db']['1']['dbhost']       = '182.92.156.106';
-$config['db']['1']['dbport']       = '3306';
+$config['db']['1']['dbport']       = '3306'; 
 $config['db']['1']['dbuser']       = 'root';
 $config['db']['1']['dbpwd']        = '19910910jacksun';
 $config['db']['1']['dbname']       = 'qyg';
@@ -47,7 +47,7 @@ $config['db']['slave']                  = $config['db']['master'];
 $config['session_expire'] 	= 3600;
 $config['lang_type'] 		= 'zh_cn';
 $config['cookie_pre'] 		= 'DE38_';
-$config['thumb']['cut_type'] = 'gd2';
+$config['thumb']['cut_type'] = 'gd';
 $config['thumb']['impath'] = '';
 $config['cache']['type'] 			= 'file';
 //$config['redis']['prefix']      	= 'nc_';
