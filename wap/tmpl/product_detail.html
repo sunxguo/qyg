@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>商品详情</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>商品详情</title>
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="format-detection" content="telephone=no">
@@ -11,11 +12,24 @@
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
 	<link rel="stylesheet" type="text/css" href="../css/child.css">
+	
+	<style type="text/css">
+	   a:focus { outline: 0; }
+	   a.hidefocus{outline:none;}
+	   a:hover｛text-decoration:none
+｝
+	   img {
+			   
+			border:0px;
+			}
+	
+						
+	</style>
 </head>
-<body>
+<body style="resize: none;">
 	<header id="header"></header>
 	<div id="product_detail_wp"></div>
-	<footer id="footer"></footer>
+	
 	<script type="text/html" id="product_detail">
 		<div class="content">
 			<div class="pddetail-cnt">
@@ -34,7 +48,7 @@
 								<%=goods_info.goods_name%>
 							</div>
 						</div>
-						<span class="pd-collect">收藏</span>
+						
 						<span class="pdpic-size-bg"></span>
 						<span class="pdpic-size">
 							<span class="pds-cursize">1</span>
@@ -44,13 +58,7 @@
 				</div>		
 
 				
-				<div class="pddc-gray-warp">
-	                <a href="go_store.html?store_id=<%=goods_info.store_id%>"  class="pddetail-go-title clearfix">
-	                    <span class="pgt-title fleft">
-	                        进入本店铺
-	                    </span>
-	                </a>
-	            </div>
+				
 				<% if(store_info.store_qq!=""||store_info.store_phone!=""){%>
 
 					<div style="background: none repeat scroll 0 0 #f5f5f5; padding: 8px 6px 0;">
@@ -147,9 +155,11 @@
 							<% } %>
 						<% } %>
 							</ul>
+							
 							<div class="pddcp-arrow">
 								<span class="graydownarrow"></span>
 							</div>
+
 						</div>
 						<div class="pddcp-one-hide">
 							<div class="clearfix">
@@ -180,42 +190,7 @@
 					</ul>
 				</div>
 			<% } %>
-				<div class="pddc-gray-warp">
-					<ul class="pddc-active ppdc-white-wrap">
-						<li class="clearfix">
-							<span class="key">活动名称：</span>
-							<div class="value">
-								<%if(mansong_info && mansong_info.mansong_name){%>
-									<%=mansong_info.mansong_name%>
-								<%}else{%>
-									暂无
-								<%}%>
-							</div>
-						</li>
-						<li class="bd-tdashed-dd">
-							<span class="no-key">活动描述：</span>
-							<%
-								if (mansong_info != null && mansong_info.rules) {
-									for (var i =0;i<mansong_info.rules.length;i++){
-						    %>
-								<div class="no-value mt5">
-									单笔订单满<span class="clr-d94 mr5 ml5"><%=mansong_info.rules[i].price%></span>元
-								<% if (mansong_info.rules[i].discount > 0) { %>
-									，立减<span class="clr-green mr5 ml5"><%=mansong_info.rules[i].discount%></span>元
-								<% } %>
-								<% if (mansong_info.rules[i].goods_id != '0') { %>
-									，送礼品：
-									<p class="">
-										<img src="<%=mansong_info.rules[i].goods_image_url%>"/>
-									<p>
-								<% } %>
-								</div>
-								<%}}else {%>
-									暂无
-								<%}%>
-						</li>
-					</ul>
-				</div>
+				
 				<div class="pddc-gray-warp">
 					<ul class="pddc-stock ppdc-white-wrap">
 						<li class="pddc-stock-title clearfix">
@@ -247,6 +222,7 @@
 						
 						
 						<%if(IsHaveBuy=='0'){ %>
+						
 						<li class="bd-tdashed-dd">
 							<span class="key-no">
 								数量：
@@ -261,18 +237,17 @@
 								</span>
 							</div>
 						</li>
-
-						<div class="content">
+						<div width="500px">
 					        <div class="pddetail-cnt">
 					            <div class="pd-detail-tab">
 					                <div  id="fixed-tab-pannel">
 					                     <div class="fixed-tab-pannel"></div>
 					                </div>
 					            </div>
-					        </div>
+					        </div>	
 					    </div>
 
-						<li class="bd-tdashed-dd" style="position: fixed;bottom: 30px;">
+						<li class="bd-tdashed-dd" style="position: fixed;bottom: -24px; padding-top:0px;">
 							<div class="opera-product-wp">
 							<% if (goods_info.is_virtual == '1') { %>
 								<div class="opera-pd-item buy-now">立即购买</div>
@@ -281,9 +256,9 @@
 							<% } else if (goods_info.is_fcode == '1') { %>
 								<div class="opera-pd-item buy-now">F码购买</div>
 							<% } else { %>
-								<img src="../images/kefu_03.png" style="padding:0 10px 0 0;">
-								<a href="go_store.html?store_id=<%=goods_info.store_id%>"><img src="../images/jindian2_02.png" style="padding:0 5px;  border:none;"></a>
-								<img src="../images/shoucang_03.png" style="padding:0 10px ;">		
+								<div style="margin-top:1%;"><img src="../images/kefu_03.png" style="padding:0 3px 3px 0; height:30px;"></div>
+								<a href="go_store.html?store_id=<%=goods_info.store_id%>" style="margin-top:2%;"><img src="../images/dianpu.png"  style=" padding-left:1px; border:0px;  height:30px;"></a>
+								<div id="pd-collects" style="margin-top:1.5%; "><img src="../images/shoucang.png"  style="  border:none; height:30px;"></div>
 								<div class="opera-pd-item buy-now ">立即购买</div>
 
 								<%if(goods_info.promotion_type!='groupbuy'){%>
@@ -295,10 +270,7 @@
 				     <% } else {%>
 					 <li class="bd-tdashed-dd">
 					<div class="opera-pd-item no-buy-now">您已参加本商品抢购活动</div></li>
-					 <%} %>
-
-					  
-					  
+					 <%} %> 
 					  
 					</ul>
 				</div>
