@@ -212,9 +212,8 @@ $(function(){
 // btn.onclick = function(){
 //    alert("验证信息会发送到"+$("#user_name").val());
 // };
-  $(document).ready(function(){
-
-
+$(document).ready(function(){
+  
 var test = {
        node:null,
        count:60,
