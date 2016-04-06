@@ -26,7 +26,7 @@
         <input type="hidden" name="form_submit" value="ok" />
         <input name="nchash" type="hidden" value="<?php echo getNchash();?>" />
         <dl>
-          <dt><?php echo $lang['login_index_username'];?>  <?php echo $_SESSION['verifycode'];?> </dt>
+          <dt><?php echo $lang['login_index_username'];?> </dt>
           <dd style="min-height:54px;">
             <input type="text" class="text" autocomplete="off"  name="user_name" id="user_name" autofocus >
             <label></label>

@@ -54,7 +54,7 @@
         </dl>
         <?php if(C('captcha_status_login') == '1') { ?>
         <dl>
-          <dt><strong>验证码</strong><a href="javascript:void(0)" class="ml5" onclick="javascript:document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=makecode&nchash=<?php echo getNchash('login','index');?>&t=' + Math.random();">更换验证码</a></dt>
+          <dt><strong>验证码</strong><a href="javascript:void(0)" class="ml5" onclick="javascript:document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/control/seccodes.php?&t=' + Math.random();">更换验证码</a></dt>
           <dd>
             <input tabindex="3" type="text" name="captcha" autocomplete="off" class="text w130" id="captcha2" maxlength="4" size="10" />
             <img src="" name="codeimage" border="0" id="codeimage" class="vt">
