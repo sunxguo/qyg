@@ -113,8 +113,8 @@
               <input name="captcha" class="text w60" type="text" id="captcha" size="4" placeholder="<?php echo $lang['goods_index_checkcode'];?>" autocomplete="off" maxlength="4"/>
               <div class="code">
                 <div class="arrow"></div>
-                <div class="code-img"><a href="javascript:void(0)" onclick="javascript:document.getElementById('codeimage').src='index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>&t=' + Math.random();"><img src="index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>" name="codeimage" border="0" id="codeimage" onclick="this.src='index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>&t=' + Math.random()"/></a></div>
-                <a href="JavaScript:void(0);" id="hide" class="close" title="关闭"><i></i></a> <a href="JavaScript:void(0);" onclick="javascript:document.getElementById('codeimage').src='index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>&t=' + Math.random();" class="change" title="<?php echo $lang['goods_index_change_checkcode'];?>"><i></i></a> </div>
+                <div class="code-img"><a href="javascript:void(0)" onclick="javascript:document.getElementById('codeimage').src='control/seccodes.php&t=' + Math.random()"><img src="control/seccodes.php&t=' + Math.random()" name="codeimage" border="0" id="codeimage" onclick="this.src='control/seccodes.php&t=' + Math.random()?>&t=' + Math.random()"/></a></div>
+                <a href="JavaScript:void(0);" id="hide" class="close" title="关闭"><i></i></a> <a href="JavaScript:void(0);" onclick="javascript:document.getElementById('codeimage').src='control/seccodes.php&t=' + Math.random()" class="change" title="<?php echo $lang['goods_index_change_checkcode'];?>"><i></i></a> </div>
               <?php } ?>
               <a href="JavaScript:void(0);" nctype="consult_submit" title="<?php echo $lang['goods_index_publish_consult'];?>" class="ncs-btn ncs-btn-red"><?php echo $lang['goods_index_publish_consult'];?></a></dd>
             <dd nctype="error_msg"></dd>

@@ -44,7 +44,7 @@
         <div id="weiboseccode" class="weiboseccode">
           <label for="captcha" class="ml5 fl"><strong><?php echo $lang['nc_checkcode'].$lang['nc_colon'];?></strong></label>
           <input name="captcha" class="w40 fl text" type="text" id="captcha" size="4" maxlength="4"/>
-          <a href="javascript:void(0)" class="ml5 fl"><img src="" title="<?php echo $lang['wrong_checkcode_change'];?>" name="codeimage" border="0" id="codeimage" onclick="this.src='index.php?act=seccode&op=makecode&nchash=<?php echo $output['nchash'];?>&t=' + Math.random()" /></a>
+          <a href="javascript:void(0)" class="ml5 fl"><img src="" title="<?php echo $lang['wrong_checkcode_change'];?>" name="codeimage" border="0" id="codeimage" onclick="this.src='control/seccodes.php&t=' + Math.random()" /></a>
           <input type="hidden" name="nchash" value="<?php echo $output['nchash'];?>"/>
         </div>
         <div class="handle">
@@ -93,7 +93,7 @@ $(function(){
 			if(cookienum >= max_recordnum && $("#weiboseccode").css('display') == 'none'){
 				//显示验证码
 				$("#weiboseccode").show();
-				$("#weiboseccode").find("#codeimage").attr('src','index.php?act=seccode&op=makecode&nchash=<?php echo $output['nchash'];?>&t=' + Math.random());
+				$("#weiboseccode").find("#codeimage").attr('src','control/seccodes.php&t=' + Math.random());
 			}else if(cookienum >= max_recordnum && $("#captcha").val() == ''){
 				showDialog('请填写验证码');
 			}else{

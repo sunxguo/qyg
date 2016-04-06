@@ -135,7 +135,7 @@ a:hover.mini-btn { text-decoration: none; color: #FFF; background-color: #51A351
     <!-- 验证码 -->
     <div id="sg_seccode" class="seccode"><?php echo $lang['nc_checkcode'].$lang['nc_colon']; ?>
       <input name="captcha" type="text" class="text" size="4" maxlength="4"/>
-      <img src="" title="<?php echo $lang['wrong_checkcode_change'];?>" name="codeimage" onclick="this.src='index.php?act=seccode&op=makecode&nchash=<?php echo $output['nchash'];?>&t=' + Math.random()" /> <span><?php echo $lang['wrong_seccode'];?></span>
+      <img src="" title="<?php echo $lang['wrong_checkcode_change'];?>" name="codeimage" onclick="this.src='control/seccodes.php&t=' + Math.random()" /> <span><?php echo $lang['wrong_seccode'];?></span>
       <input type="hidden" name="nchash" value="<?php echo $output['nchash'];?>"/>
     </div>
     <input type="text" style="display:none;" />

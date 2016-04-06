@@ -39,8 +39,8 @@
           <dt><?php echo $lang['login_index_checkcode'];?>：</dt>
           <dd>
             <input type="text" name="captcha" class="text w50 fl" id="captcha" maxlength="4" size="10" />
-            <a href="JavaScript:void(0);" onclick="javascript:document.getElementById('codeimage').src='index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>&t=' + Math.random();" class="change" title="<?php echo $lang['login_index_change_checkcode'];?>">
-            <img src="index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>" class="fl ml5" name="codeimage" id="codeimage" border="0"/></a>
+            <a href="JavaScript:void(0);" onclick="javascript:document.getElementById('codeimage').src='control/seccodes.php?>&t=' + Math.random();" class="change" title="<?php echo $lang['login_index_change_checkcode'];?>">
+            <img src="<?php echo SHOP_SITE_URL?>/control/seccodes.php" class="fl ml5" name="codeimage" id="codeimage" border="0"/></a>
             <label></label>
           </dd>
         </dl>

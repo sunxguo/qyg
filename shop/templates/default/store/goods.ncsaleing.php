@@ -70,7 +70,7 @@ $(document).ready(function(){
       <?php if($output['setting_config']['captcha_status_goodsqa'] == '1') { ?>
       <label for="captcha"><strong><?php echo $lang['goods_index_checkcode'];?></strong>
         <input name="captcha" class="text w60" type="text" id="captcha" size="4" autocomplete="off" maxlength="4"/><span></span>
-        <img src="index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>" name="codeimage" border="0" id="codeimage" onclick="this.src='index.php?act=seccode&op=makecode&nchash=<?php echo $output['nchash'];?>&t=' + Math.random()"/><span><?php echo $lang['goods_index_change_checkcode'];?></span></label>
+        <img src="control/seccodes.php&t=' + Math.random()?>" name="codeimage" border="0" id="codeimage" onclick="this.src='control/seccodes.php&t=' + Math.random()"/><span><?php echo $lang['goods_index_change_checkcode'];?></span></label>
       <?php } ?>
     </div>
     <div class="ask-content"> <strong>咨询内容：</strong>
@@ -101,12 +101,12 @@ $(function(){
 					if(data.done == 'true'){
 						$("#cosulting_demo").load('index.php?act=goods&op=cosulting&goods_id=<?php echo $_GET['goods_id']; ?>');
 					}else{
-						document.getElementById('codeimage').src='index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>&t=' + Math.random(); 
+						document.getElementById('codeimage').src='control/seccodes.php&t=' + Math.random(); 
 						alert(data.msg);
 					}
 		    	});
 	   	}else{
-	   		document.getElementById('codeimage').src='index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>&t=' + Math.random();
+	   		document.getElementById('codeimage').src='control/seccodes.php&t=' + Math.random();
 		}
 	});
 	$('#message').validate({

@@ -21,7 +21,7 @@
       <dt><?php echo $lang['login_index_checkcode'];?></dt>
       <dd>
         <input type="text" name="captcha" class="text fl w60" id="captcha" maxlength="4" size="10" />
-        <img class="fl ml10" src="<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>" title="<?php echo $lang['login_index_change_checkcode'];?>" name="codeimage" border="0" id="codeimage" onclick="this.src='<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>&t=' + Math.random()"><span></span></dd>
+        <img class="fl ml10" src="<?php echo SHOP_SITE_URL?>/control/seccodes.php" title="<?php echo $lang['login_index_change_checkcode'];?>" name="codeimage" border="0" id="codeimage" onclick="this.src='<?php echo SHOP_SITE_URL?>/control/seccodes.php&t=' + Math.random();"><span></span></dd>
     </dl>
     <?php } ?>
     <ul>

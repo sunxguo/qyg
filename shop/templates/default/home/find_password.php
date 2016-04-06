@@ -65,7 +65,7 @@ $(function(){
         if($("#find_password_form").valid()){
         	ajaxpost('find_password_form', '', '', 'onerror');
         } else{
-        	document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>&t=' + Math.random();
+        	document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/control/seccodes.php&t=' + Math.random();
         }
     });
     $('#find_password_form').validate({

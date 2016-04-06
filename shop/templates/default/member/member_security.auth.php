@@ -44,7 +44,7 @@
         <dt><i class="required">*</i>图形验证码：</dt>
         <dd>
           <input type="text" name="captcha" class="text" id="captcha" maxlength="4" size="10" autocomplete="off" />
-         <img src="<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>" name="codeimage" border="0" id="codeimage" class="ml5 vm"><a href="javascript:void(0)" class="ml5 blue" onclick="javascript:document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>&t=' + Math.random();">看不清？换张图</a>
+         <img src="<?php echo SHOP_SITE_URL?>/control/seccodes.php" name="codeimage" border="0" id="codeimage" class="ml5 vm"><a href="javascript:void(0)" class="ml5 blue" onclick="javascript:document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/control/seccodes.php&t=' + Math.random();">看不清？换张图</a>
           <label for="captcha" generated="true" class="error"></label>
         </dd>
       </dl>
@@ -65,7 +65,7 @@ var ALLOW_SEND = true;
 $(function(){
 	$('.submit').on('click',function(){
 		if (!$('#auth_form').valid()){
-			document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>&t=' + Math.random();
+			document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/control/seccodes.php&t=' + Math.random();
 		} else {
 			$('#auth_form').submit();
 		}
@@ -111,7 +111,7 @@ $(function(){
                 required : true,
                 minlength: 4,
                 remote   : {
-                    url : '<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=check&nchash=<?php echo getNchash();?>',
+                    url : '<?php echo SHOP_SITE_URL?>/control/seccodes.php&t=' + Math.random(),
                     type: 'get',
                     data:{
                         captcha : function(){
