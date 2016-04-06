@@ -35,7 +35,7 @@ $(function(){
 				//显示验证码
 				$("#commentseccode"+data.txtid).show();
 				var nchash = $("#commentseccode"+data.txtid).find("[name='nchash']").val();
-				$("#commentseccode"+data.txtid).find("[name='codeimage']").attr('src','index.php?act=seccode&op=makecode&nchash='+nchash+'&t=' + Math.random());
+				$("#commentseccode"+data.txtid).find("[name='codeimage']").attr('src','control/seccodes.php?>&t=' + Math.random());
 			}else if(cookienum >= MAX_RECORDNUM && $("#commentseccode"+data.txtid).find("[name='captcha']").val() == ''){
 				showDialog('请填写验证码');
 			}else{
@@ -124,7 +124,7 @@ $(function(){
 	                //显示验证码
 	                seccode.show();
 	                var nchash = seccode.find("[name='nchash']").val();
-	                seccode.find("[name='codeimage']").attr('src','index.php?act=seccode&op=makecode&nchash='+nchash+'&t=' + Math.random());
+	                seccode.find("[name='codeimage']").attr('src','control/seccodes.php?>&t=' + Math.random());
 			    } else if(seccode.find("[name='captcha']").val() == ''){
 	                showDialog('请填写验证码');
 			    }
