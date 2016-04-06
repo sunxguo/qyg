@@ -95,7 +95,7 @@ $(document).ready(function(){
             ,captcha : {
                 required : true,
                 remote   : {
-                    url : '<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=check?>',
+                    url : '<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=check',
                     type: 'get',
                     data:{
                         captcha : function(){

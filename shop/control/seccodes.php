@@ -3,11 +3,13 @@
  * 验证码
  ***/
 
-
+   
  
-
+    
     vCodeOp();
 	function vCodeOp() {
+	session_start();//开启缓存
+	
 	$num = 4; $size = 20; $width = 90; $height = 25;
     !$width && $width = $num * $size * 4 / 5 + 5;
     !$height && $height = $size + 10; 
@@ -40,12 +42,12 @@
     // 画验证码
     // @imagefttext($im, $size , 0, 5, $size + 3, $text_color, 'c:\\WINDOWS\\Fonts\\simsun.ttc', $code);
     @imagefttext($im, $size , 0, 5, $size + 3, $text_color, '../msyh.ttf', $code); 
-    $_SESSION["VerifyCode"]=strtolower($code);
+    
+    $_SESSION["verifycode"]=$code;
     header("Cache-Control: max-age=1, s-maxage=1, no-cache, must-revalidate");
     header("Content-type: image/png;charset=gb2312");
     imagepng($im);
     imagedestroy($im);
-
 }
 
  

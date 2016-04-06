@@ -44,7 +44,8 @@ class seccodeControl{
 	 *
 	 */
 	public function checkOp(){
-		
+		var_dump('789');
+		var_dump($_SESSION);
 		if (checkSeccode($_SESSION["VerifyCode"],$_GET['captcha'])){
 			exit('true');
 		}else{
@@ -52,8 +53,7 @@ class seccodeControl{
 		}
 	}
 	public function indexOp(){
-		//var_dump('789');
-		var_dump($_SESSION["VerifyCode"]);
+
 		if (checkSeccode($_SESSION["VerifyCode"],$_GET['captcha'])){
 			exit('true');
 		}else{
