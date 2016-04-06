@@ -28,7 +28,7 @@
         $stres .= $str[mt_rand(0, strlen($str)-1)];
     } 
     $code=$stres;
-    $_SESSION['abc']=$code;
+    
 
      // 画图像
     $im = imagecreatetruecolor($width, $height); 
@@ -58,7 +58,7 @@
     header("Content-type: image/png;charset=gb2312");
     imagepng($im);
     imagedestroy($im);
-    
+    $_SESSION['abc']=$code;
    
 }
 
