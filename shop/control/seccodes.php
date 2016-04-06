@@ -8,6 +8,15 @@
 	function vCodeOp() {
 	
 	session_start();
+	if (isset($_SESSION['time']))//判断缓存时间
+    {
+        session_id();
+        $_SESSION['time'];
+    }
+    else
+    {
+        $_SESSION['time'] = date("Y-m-d H:i:s");
+    }
 	$num = 4; $size = 20; $width = 90; $height = 25;
     !$width && $width = $num * $size * 4 / 5 + 5;
     !$height && $height = $size + 10; 
@@ -20,10 +29,9 @@
     } 
     $code=$stres;
     $_SESSION['abc']=$code;
-    if(!empty($_SESSION['abc']))
-    {
+
      // 画图像
-    	$im = imagecreatetruecolor($width, $height); 
+    $im = imagecreatetruecolor($width, $height); 
     // 定义要用到的颜色
     $back_color = imagecolorallocate($im, 235, 236, 237);
     $boer_color = imagecolorallocate($im, 118, 151, 199);
@@ -50,8 +58,6 @@
     header("Content-type: image/png;charset=gb2312");
     imagepng($im);
     imagedestroy($im);
-    }
-    
     
    
 }
