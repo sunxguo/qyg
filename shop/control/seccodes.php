@@ -15,7 +15,7 @@
     $str = "23456789abcdefghijkmnpqrstuvwxyzABCDEFGHIJKLMNPQRSTUVW";
     $code = '';
     for ($i = 0; $i < $num; $i++) {
-        $code .= $str[mt_rand(0, $str)];
+        $code .= $str[mt_rand(0, strlen($str)-1)];
     } 
     // 画图像
     $im = imagecreatetruecolor($width, $height); 
