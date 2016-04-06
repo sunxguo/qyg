@@ -422,9 +422,9 @@ class loginControl extends BaseHomeControl {
         $result = chksubmit(true,true,'num');
         var_dump($result);
         if ($result){
-            if ($result === -11){
-                showDialog('用户名或密码错误','','error');
-            } 
+            // if ($result === -11){
+            //     showDialog('用户名或密码错误','','error');
+            // } 
 
             // else
             // if ($result === -12){
