@@ -325,8 +325,6 @@ class loginControl extends BaseHomeControl {
 		if ($result !== false){
 		    if ($result === -11){
 		        showDialog('非法提交');
-		    }elseif ($result === -12){
-		        showDialog('验证码错误');
 		    }
 		}
 
