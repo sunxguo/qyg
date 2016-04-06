@@ -36,10 +36,11 @@ class loginControl extends BaseHomeControl {
 			{
 				showDialog($lang['login_index_login_illegal'],'','error',$script);
 			}
-			elseif ($result === -12)
-			{
-				showDialog($lang['login_index_wrong_checkcode'],'','error',$script);
-			}
+			else
+			// if ($result === -12)
+			// {
+			// 	showDialog($lang['login_index_wrong_checkcode'],'','error',$script);
+			// }
 			if(process::islock('login'))
 			{
 				showDialog($lang['nc_common_op_repeat'],SHOP_SITE_URL,'','error',$script);
