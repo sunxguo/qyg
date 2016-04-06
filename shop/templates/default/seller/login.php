@@ -46,7 +46,7 @@ window.onload = function() {
 $(document).ready(function() {
     //更换验证码
     function change_seccode() {
-        $('#codeimage').attr('src', 'control/seccodes.php&t=' + Math.random());
+        $('#codeimage').attr('src', '<?php echo SHOP_SITE_URL?>/control/seccodes.php&t=' + Math.random());
         $('#captcha').select();
     }
 
@@ -70,7 +70,7 @@ $(document).ready(function() {
             captcha:{
                 required:true,
                 remote:{
-                    url:"index.php?act=seccode&op=check?>",
+                    url:"index.php?act=seccode&op=check",
                     type:"get",
                     data:{
                         captcha:function() {
