@@ -19,9 +19,9 @@ class LoginControl extends SystemControl {
 		    if ($result === -11){
 		        showMessage('非法请求');
 		    }
-		    if ($result === -12){
-		        showMessage(L('login_index_checkcode_wrong'));
-		    }
+		    // if ($result === -12){
+		    //     showMessage(L('login_index_checkcode_wrong'));
+		    // }
 		    //var_dump($_POST['captcha']);
 		 
 		    if (process::islock('admin')) {
