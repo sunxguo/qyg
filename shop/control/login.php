@@ -320,7 +320,7 @@ class loginControl extends BaseHomeControl {
 	public function find_passwordOp(){
 		Language::read('home_login_register');
 		$lang	= Language::getLangContent();
-
+        
 		$result = chksubmit(true,true,'num');
 		if ($result !== false){
 		    if ($result === -11){
@@ -346,17 +346,18 @@ class loginControl extends BaseHomeControl {
 		if(empty($_POST['email'])){
 			showDialog($lang['login_password_input_email'],'reload');
 		}
-
 		if(strtoupper($_POST['email'])!=strtoupper($member['member_email'])){
 		    process::addprocess('forget');
 			showDialog($lang['login_password_email_not_exists'],'reload');
 		}
+
 		process::clear('forget');
 		//产生密码
 		$new_password	= random(15);
 		if(!($member_model->editMember(array('member_id'=>$member['member_id']),array('member_passwd'=>md5($new_password))))){
 			showDialog($lang['login_password_email_fail'],'reload');
 		}
+// var_dump($member['member_email']);exit;
 
 		$model_tpl = Model('mail_templates');
 		$tpl_info = $model_tpl->getTplInfo(array('code'=>'reset_pwd'));
@@ -369,7 +370,9 @@ class loginControl extends BaseHomeControl {
 		$message	= ncReplaceText($tpl_info['content'],$param);
 
 		$email	= new Email();
+
 		$result	= $email->send_sys_email($_POST["email"],$subject,$message);
+
 		showDialog('新密码已经发送至您的邮箱，请尽快登录并更改密码！','','succ','',5);
 	}
 
@@ -417,10 +420,12 @@ class loginControl extends BaseHomeControl {
 
 	public function loginOp() {
         $result = chksubmit(true,true,'num');
+        var_dump($result);
         if ($result){
             if ($result === -11){
                 showDialog('用户名或密码错误','','error');
             } 
+
             // else
             // if ($result === -12){
             //     showDialog('验证码错误','','error');
