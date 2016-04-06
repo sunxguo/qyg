@@ -46,7 +46,7 @@ window.onload = function() {
 $(document).ready(function() {
     //更换验证码
     function change_seccode() {
-        $('#codeimage').attr('src', 'control/seccodes.php?>&t=' + Math.random());
+        $('#codeimage').attr('src', 'control/seccodes.php&t=' + Math.random());
         $('#captcha').select();
     }
 
