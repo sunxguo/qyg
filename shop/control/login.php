@@ -28,7 +28,7 @@ class loginControl extends BaseHomeControl {
 		//检查登录状态
 		$model_member->checkloginMember();
 		if ($_GET['inajax'] == 1 && C('captcha_status_login') == '1'){
-		    $script = "document.getElementById('codeimage').src='".APP_SITE_URL."/index.php?act=seccode&op=makecode&nchash=".getNchash()."&t=' + Math.random();";
+		    $script = "document.getElementById('codeimage').src='".APP_SITE_URL."/control/seccodes.php&t=' + Math.random();";
 		}
 		$result = chksubmit(true,C('captcha_status_login'),'num');
 		if ($result !== false){
