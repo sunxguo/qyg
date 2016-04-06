@@ -34,9 +34,10 @@ class seller_loginControl extends BaseSellerControl {
         if ($result){
             if ($result === -11){
                 showDialog('用户名或密码错误','','error');
-            } elseif ($result === -12){
-                showDialog('验证码错误','','error');
-            }
+            } else
+            // if ($result === -12){
+            //     showDialog('验证码错误','','error');
+            // }
         } else {
             showDialog('非法提交','','error');
         }
