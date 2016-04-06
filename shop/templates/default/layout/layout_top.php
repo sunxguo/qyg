@@ -175,7 +175,7 @@ $(function() {
     // 右侧bar登录
     $('div[nctype="a-barLoginBox"]').click(function(){
         $('div[nctype="barLoginBox"]').toggle();
-        document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=makecode&nchash=c93636e5&t=' + Math.random();
+        document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/control/seccodes.php?>&t=' + Math.random();
     });
     $('a[nctype="close-barLoginBox"]').click(function(){
         $('div[nctype="barLoginBox"]').toggle();
