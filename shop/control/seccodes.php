@@ -43,7 +43,7 @@
     // 画验证码
     // @imagefttext($im, $size , 0, 5, $size + 3, $text_color, 'c:\\WINDOWS\\Fonts\\simsun.ttc', $code);
     @imagefttext($im, $size , 0, 5, $size + 3, $text_color, '../msyh.ttf', $code); 
-    $_SESSION['abc']=$code;
+    $_SESSION['veader'] = $code;
     // header("Cache-Control: max-age=1, s-maxage=1, no-cache, must-revalidate");
     header("Content-type: image/png;charset=gb2312");
     imagepng($im);
