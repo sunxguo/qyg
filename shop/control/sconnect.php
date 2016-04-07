@@ -122,9 +122,11 @@ class sconnectControl extends BaseHomeControl{
 		if ($result !== false){
 			if ($result === -11){
 				showDialog(Language::get('login_index_login_illegal'));
-			}elseif ($result === -12){
-				showDialog(Language::get('login_usersave_wrong_code'));
 			}
+			// else
+			// if ($result === -12){
+			// 	showDialog(Language::get('login_usersave_wrong_code'));
+			// }
 		}else{
 			//获取新浪微博账号信息
 			require_once (BASE_PATH.'/api/sina/get_user_info.php');
