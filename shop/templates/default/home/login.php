@@ -21,7 +21,7 @@
       <h3><?php echo $lang['login_index_user_login'];?></h3>
     </div>
     <div class="nc-login-content" id="demo-form-site">
-      <form id="login_form" method="post" action="127.0.0.1/shop/index.php?act=login&op=login"  class="bg">
+      <form id="login_form" method="post" action="index.php?act=login&op=login"  class="bg">
         <?php Security::getToken();?>
         <input type="hidden" name="form_submit" value="ok" />
         <input name="nchash" type="hidden" value="<?php echo getNchash();?>" />
