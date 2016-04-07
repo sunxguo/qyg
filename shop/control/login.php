@@ -418,40 +418,40 @@ class loginControl extends BaseHomeControl {
 
 	}
 
-	 public function loginOp() {
-        $result = chksubmit(true,true,'num');
-        if ($result){
-            if ($result === -11){
-                showDialog('用户名或密码错误','','error');
-            } 
-            // else
-            // if ($result === -12){
-            //     showDialog('验证码错误','','error');
-            // }
-        } else {
-            showDialog('非法提交','','error');
-        }
+	 // public function loginOp() {
+  //       $result = chksubmit(true,true,'num');
+  //       if ($result){
+  //           if ($result === -11){
+  //               showDialog('用户名或密码错误','','error');
+  //           } 
+  //           // else
+  //           // if ($result === -12){
+  //           //     showDialog('验证码错误','','error');
+  //           // }
+  //       } else {
+  //           showDialog('非法提交','','error');
+  //       }
 
-        $model_seller = Model('member');
-        $seller_info = $model_seller->getMemberInfo(array('member_name' => $_POST['user_name']));
-        if($seller_info) {
+  //       $model_seller = Model('member');
+  //       $seller_info = $model_seller->getMemberInfo(array('member_name' => $_POST['user_name']));
+  //       if($seller_info) {
 
-            $model_member = Model('member');
-            $member_info = $model_member->getMemberInfo(
-                array(
-                    'member_name' => $seller_info['member_name'],
-                    'member_passwd' => md5($_POST['password'])
-                )
-            );
-            if($member_info) {
+  //           $model_member = Model('member');
+  //           $member_info = $model_member->getMemberInfo(
+  //               array(
+  //                   'member_name' => $seller_info['member_name'],
+  //                   'member_passwd' => md5($_POST['password'])
+  //               )
+  //           );
+  //           if($member_info) {
                
-                redirect('index.php?act=member_information&op=member');
-            } else {
-                showMessage('用户名密码错误', '', '', 'error');
-            }
-        } else {
-            showMessage('用户名密码错误', '', '', 'error');
-        }
-    }
+  //               redirect('index.php?act=member_information&op=member');
+  //           } else {
+  //               showMessage('用户名密码错误', '', '', 'error');
+  //           }
+  //       } else {
+  //           showMessage('用户名密码错误', '', '', 'error');
+  //       }
+  //   }
 
 }
