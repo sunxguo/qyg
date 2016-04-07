@@ -434,9 +434,9 @@ class loginControl extends BaseHomeControl {
         //     showDialog('非法提交','','error');
         // }
 
-        $model_seller = Model('member');
-        $seller_info = $model_seller->getSellerInfo(array('user_name' => $_POST['user_name']));
-        if($seller_info) {
+        // $model_seller = Model('member');
+        // $seller_info = $model_seller->getSellerInfo(array('user_name' => $_POST['user_name']));
+        // if($seller_info) {
 
             $model_member = Model('member');
             $member_info = $model_member->getMemberInfo(
@@ -496,8 +496,9 @@ class loginControl extends BaseHomeControl {
             } else {
                 showMessage('用户名密码错误', '', '', 'error');
             }
-        } else {
-            showMessage('用户名密码错误', '', '', 'error');
-        }
+        } 
+        // else {
+        //     showMessage('用户名密码错误', '', '', 'error');
+        // }
     }
 }
