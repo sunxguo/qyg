@@ -492,7 +492,7 @@ class loginControl extends BaseHomeControl {
        //              }
        //          }
                 // $this->recordSellerLog('登录成功');
-                redirect('index.php?act=member_information&op=member');
+                redirect('index.php?act=member_information&op=index');
             } else {
                 showMessage('用户名密码错误', '', '', 'error');
             }
