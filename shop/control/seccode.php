@@ -45,7 +45,7 @@ class seccodeControl{
 	 */
 	public function checkOp(){
 		
-		//var_dump($_SESSION);
+		var_dump($_SESSION);
 		if(($_GET['captcha']==$_GET['captcha'])){
 			exit('true');
 		}else{

@@ -7,16 +7,6 @@
     vCodeOp();
 	function vCodeOp() {
 	
-	session_start();
-	if (isset($_SESSION['time']))//判断缓存时间
-    {
-        session_id();
-        $_SESSION['time'];
-    }
-    else
-    {
-        $_SESSION['time'] = date("Y-m-d H:i:s");
-    }
 	$num = 4; $size = 20; $width = 90; $height = 25;
     !$width && $width = $num * $size * 4 / 5 + 5;
     !$height && $height = $size + 10; 
