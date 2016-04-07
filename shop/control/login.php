@@ -420,19 +420,19 @@ class loginControl extends BaseHomeControl {
 
 	public function loginOp() {
         $result = chksubmit(true,true,'num');
-        var_dump($result);
-        if ($result){
-            // if ($result === -11){
-            //     showDialog('用户名或密码错误','','error');
-            // } 
+        //var_dump($result);
+        // if ($result){
+        //     // if ($result === -11){
+        //     //     showDialog('用户名或密码错误','','error');
+        //     // } 
 
-            // else
-            // if ($result === -12){
-            //     showDialog('验证码错误','','error');
-            // }
-        } else {
-            showDialog('非法提交','','error');
-        }
+        //     // else
+        //     // if ($result === -12){
+        //     //     showDialog('验证码错误','','error');
+        //     // }
+        // } else {
+        //     showDialog('非法提交','','error');
+        // }
 
         $model_seller = Model('seller');
         $seller_info = $model_seller->getSellerInfo(array('seller_name' => $_POST['seller_name']));
