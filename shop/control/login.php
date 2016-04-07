@@ -492,7 +492,7 @@ class loginControl extends BaseHomeControl {
        //              }
        //          }
                 // $this->recordSellerLog('登录成功');
-                redirect('index.php?act=member_information&op=member');
+                redirect('quanyougo.com/shop/index.php?act=member_information&op=member');
             } else {
                 showMessage('用户名密码错误', '', '', 'error');
             }
