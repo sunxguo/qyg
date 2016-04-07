@@ -441,7 +441,7 @@ class loginControl extends BaseHomeControl {
             $model_member = Model('member');
             $member_info = $model_member->getMemberInfo(
                 array(
-                    'member_id' => $seller_info['member_id'],
+                    'member_name' => $seller_info['member_name'],
                     'member_passwd' => md5($_POST['password'])
                 )
             );
