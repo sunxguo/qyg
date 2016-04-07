@@ -23,7 +23,7 @@ class member_informationControl extends BaseMemberControl {
 	 * @return
 	 */
 	public function memberOp() {
-
+        var_dump('123');
 		Language::read('member_home_member');
 		$lang	= Language::getLangContent();
 
