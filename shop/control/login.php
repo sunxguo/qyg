@@ -491,8 +491,8 @@ class loginControl extends BaseHomeControl {
        //                  $_SESSION['seller_quicklink'][$value] = $value ;
        //              }
        //          }
-                $this->recordSellerLog('登录成功');
-                redirect('index.php?act=seller_center');
+                // $this->recordSellerLog('登录成功');
+                redirect('index.php?act=member_information&op=member');
             } else {
                 showMessage('用户名密码错误', '', '', 'error');
             }
