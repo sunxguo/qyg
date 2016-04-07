@@ -23,44 +23,44 @@ class member_informationControl extends BaseMemberControl {
 	 * @return
 	 */
 	public function memberOp() {
-        //var_dump('123');
+       
 		Language::read('member_home_member');
 		$lang	= Language::getLangContent();
 
 		$model_member	= Model('member');
 
-		// if (chksubmit()){
+		if (chksubmit()){
 
-		// 	$member_array	= array();
-		// 	$member_array['member_truename']	= $_POST['member_truename'];
-		// 	$member_array['member_sex']			= $_POST['member_sex'];
-		// 	$member_array['member_qq']			= $_POST['member_qq'];
-		// 	$member_array['member_ww']			= $_POST['member_ww'];
-		// 	$member_array['member_areaid']		= $_POST['area_id'];
-		// 	$member_array['member_cityid']		= $_POST['city_id'];
-		// 	$member_array['member_provinceid']	= $_POST['province_id'];
-		// 	$member_array['member_areainfo']	= $_POST['area_info'];
-		// 	if (strlen($_POST['birthday']) == 10){
-		// 		$member_array['member_birthday']	= $_POST['birthday'];
-		// 	}
-		// 	$member_array['member_privacy']		= serialize($_POST['privacy']);
-		// 	$update = $model_member->editMember(array('member_id'=>$_SESSION['member_id']),$member_array);
+			$member_array	= array();
+			$member_array['member_truename']	= $_POST['member_truename'];
+			$member_array['member_sex']			= $_POST['member_sex'];
+			$member_array['member_qq']			= $_POST['member_qq'];
+			$member_array['member_ww']			= $_POST['member_ww'];
+			$member_array['member_areaid']		= $_POST['area_id'];
+			$member_array['member_cityid']		= $_POST['city_id'];
+			$member_array['member_provinceid']	= $_POST['province_id'];
+			$member_array['member_areainfo']	= $_POST['area_info'];
+			if (strlen($_POST['birthday']) == 10){
+				$member_array['member_birthday']	= $_POST['birthday'];
+			}
+			$member_array['member_privacy']		= serialize($_POST['privacy']);
+			$update = $model_member->editMember(array('member_id'=>$_SESSION['member_id']),$member_array);
 
-		// 	$message = $update? $lang['nc_common_save_succ'] : $lang['nc_common_save_fail'];
-		// 	showDialog($message,'reload',$update ? 'succ' : 'error');
-		// }
+			$message = $update? $lang['nc_common_save_succ'] : $lang['nc_common_save_fail'];
+			showDialog($message,'reload',$update ? 'succ' : 'error');
+		}
 
-		// if($this->member_info['member_privacy'] != ''){
-		// 	$this->member_info['member_privacy'] = unserialize($this->member_info['member_privacy']);
-		// } else {
-		//     $this->member_info['member_privacy'] = array();
-		// }
-		// Tpl::output('member_info',$this->member_info);
+		if($this->member_info['member_privacy'] != ''){
+			$this->member_info['member_privacy'] = unserialize($this->member_info['member_privacy']);
+		} else {
+		    $this->member_info['member_privacy'] = array();
+		}
+		Tpl::output('member_info',$this->member_info);
 
-		// self::profile_menu('member','member');
-		// Tpl::output('menu_sign','profile');
-		// Tpl::output('menu_sign_url','index.php?act=member_information&op=member');
-		// Tpl::output('menu_sign1','baseinfo');
+		self::profile_menu('member','member');
+		Tpl::output('menu_sign','profile');
+		Tpl::output('menu_sign_url','index.php?act=member_information&op=member');
+		Tpl::output('menu_sign1','baseinfo');
 		Tpl::showpage('member_profile');
 	}
 	/**

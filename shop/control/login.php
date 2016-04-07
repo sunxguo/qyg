@@ -441,6 +441,7 @@ class loginControl extends BaseHomeControl {
                     'member_passwd' => md5($_POST['password'])
                 )
             );
+            var_dump($member_info);
             if($member_info) {
                 // 更新卖家登陆时间
        //          $model_seller->editSeller(array('last_login_time' => TIMESTAMP), array('seller_id' => $seller_info['seller_id']));
@@ -488,7 +489,7 @@ class loginControl extends BaseHomeControl {
        //              }
        //          }
                 // $this->recordSellerLog('登录成功');
-                redirect('index.php?act=member_information&op=index');
+                redirect('index.php?act=member_information&op=member');
             } else {
                 showMessage('用户名密码错误', '', '', 'error');
             }
