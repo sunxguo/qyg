@@ -419,7 +419,7 @@ class loginControl extends BaseHomeControl {
 	}
 
 	public function loginOp() {
-        $result = chksubmit(true,true,'num');
+        //$result = chksubmit(true,true,'num');
         //var_dump($result);
         // if ($result){
         //     // if ($result === -11){
@@ -434,8 +434,8 @@ class loginControl extends BaseHomeControl {
         //     showDialog('非法提交','','error');
         // }
 
-        $model_seller = Model('seller');
-        $seller_info = $model_seller->getSellerInfo(array('seller_name' => $_POST['seller_name']));
+        $model_seller = Model('member');
+        $seller_info = $model_seller->getSellerInfo(array('user_name' => $_POST['user_name']));
         if($seller_info) {
 
             $model_member = Model('member');
