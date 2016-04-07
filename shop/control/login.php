@@ -443,7 +443,8 @@ class loginControl extends BaseHomeControl {
                     'member_passwd' => md5($_POST['password'])
                 )
             );
-           
+            if($member_info) {
+               
                 redirect('index.php?act=member_information&op=member');
             } else {
                 showMessage('用户名密码错误', '', '', 'error');
