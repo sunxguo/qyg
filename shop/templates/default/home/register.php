@@ -21,7 +21,7 @@
     </div>
     <div class="nc-login-content">
       <!-- <form id="register_form" method="post" action="127.0.0.1/index.php?act=login&op=usersave"> -->
-       <form id="register_form" method="post" action="<?php echo SHOP_SITE_URL;?>/index.php?act=login&op=usersave">
+       <form id="register_form" method="post" action="127.0.0.1/shop/index.php?act=login&op=usersave">
       <?php Security::getToken();?>
        <!-- <form id="register_form" method="post" action="<?php echo SHOP_SITE_URL;?>/index.php?act=login&op=usersave"> -->
         <dl>
@@ -154,20 +154,6 @@ $(function(){
                 required : true,
                 equalTo  : '#password'
             },
-            // email : {
-            //     required : true,
-            //     email    : true,
-            //     remote   : {
-            //         url : 'index.php?act=login&op=check_email',
-            //         type: 'get',
-            //         data:{
-            //             email : function(){
-            //                 return $('#email').val();
-            //             }
-            //         }
-            //     }
-            // },
-
             
             agree : {
                 required : true
@@ -190,11 +176,7 @@ $(function(){
                 required : '<?php echo $lang['login_register_input_password_again'];?>',
                 equalTo  : '<?php echo $lang['login_register_password_not_same'];?>'
             },
-            // email : {
-            //     required : '<?php echo $lang['login_register_input_email'];?>',
-            //     email    : '<?php echo $lang['login_register_invalid_email'];?>',
-            //     remote   : '<?php echo $lang['login_register_email_exists'];?>'
-            // },
+            
             // <?php if(C('captcha_status_register') == '1') { ?>
             // captcha : {
             //     required : '<?php echo $lang['login_register_input_text_in_image'];?>',

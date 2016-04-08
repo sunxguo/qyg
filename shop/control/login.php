@@ -163,7 +163,7 @@ class loginControl extends BaseHomeControl {
 		$model_member	= Model('member');
 		$model_member->checkloginMember();
 		$result = chksubmit(true,C('captcha_status_register'),'num');
-		var_dump($result);exit;
+		
 		if ($result){
 			if ($result === -11){
 				showDialog($lang['invalid_request'],'','error');
@@ -176,6 +176,7 @@ class loginControl extends BaseHomeControl {
 		{
 		    showDialog($lang['invalid_request'],'','error');
 		}	
+
     	if(!preg_match("/^1[34578]\d{9}$/", $_POST['user_name']))
     	{
     		showDialog('请输入正确格式的手机号','','error');
@@ -190,6 +191,7 @@ class loginControl extends BaseHomeControl {
         $register_info['password'] = $_POST['password'];
         $register_info['password_confirm'] = $_POST['password_confirm'];
         $register_info['email'] = $_POST['email'];
+
 		//添加奖励积分zmr>v30
 		$zmr=intval($_COOKIE['zmr']);
 		if($zmr>0)
@@ -200,9 +202,12 @@ class loginControl extends BaseHomeControl {
 				$zmr=0;
 			}
 		}
+
 		$register_info['inviter_id'] = $zmr;
         $member_info = $model_member->register($register_info);
-        if(!isset($member_info['error'])) {
+
+        // if(!isset($member_info['error'])) {
+
             $model_member->createSession($member_info,true);
 			process::addprocess('reg');
 
@@ -214,9 +219,12 @@ class loginControl extends BaseHomeControl {
 
 			$_POST['ref_url']	= (strstr($_POST['ref_url'],'logout')=== false && !empty($_POST['ref_url']) ? $_POST['ref_url'] : 'index.php?act=member_information&op=member');
 			redirect($_POST['ref_url']);
-        } else {
-			showDialog($member_info['error']);
-        }   	
+   //      } else {
+
+			// showDialog($member_info['error']);
+			// var_dump($result);exit;	
+   //      }   
+
 	}
 
 	public function sendnoteOp()
