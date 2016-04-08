@@ -163,7 +163,7 @@ class loginControl extends BaseHomeControl {
 		$model_member	= Model('member');
 		$model_member->checkloginMember();
 		$result = chksubmit(true,C('captcha_status_register'),'num');
-		//var_dump($result);exit;
+		var_dump($result);exit;
 		if ($result){
 			if ($result === -11){
 				showDialog($lang['invalid_request'],'','error');
@@ -286,15 +286,15 @@ class loginControl extends BaseHomeControl {
 	 * @param
 	 * @return
 	 */
-	// public function check_emailOp() {
-	// 	$model_member = Model('member');
-	// 	$check_member_email	= $model_member->getMemberInfo(array('member_email'=>$_GET['email']));
-	// 	if(is_array($check_member_email) and count($check_member_email)>0) {
-	// 		echo 'false';
-	// 	} else {
-	// 		echo 'true';
-	// 	}
-	// }
+	public function check_emailOp() {
+		$model_member = Model('member');
+		$check_member_email	= $model_member->getMemberInfo(array('member_email'=>$_GET['email']));
+		if(is_array($check_member_email) and count($check_member_email)>0) {
+			echo 'false';
+		} else {
+			echo 'true';
+		}
+	}
 
 	/**
 	 * 忘记密码页面
