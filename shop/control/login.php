@@ -286,15 +286,15 @@ class loginControl extends BaseHomeControl {
 	 * @param
 	 * @return
 	 */
-	public function check_emailOp() {
-		$model_member = Model('member');
-		$check_member_email	= $model_member->getMemberInfo(array('member_email'=>$_GET['email']));
-		if(is_array($check_member_email) and count($check_member_email)>0) {
-			echo 'false';
-		} else {
-			echo 'true';
-		}
-	}
+	// public function check_emailOp() {
+	// 	$model_member = Model('member');
+	// 	$check_member_email	= $model_member->getMemberInfo(array('member_email'=>$_GET['email']));
+	// 	if(is_array($check_member_email) and count($check_member_email)>0) {
+	// 		echo 'false';
+	// 	} else {
+	// 		echo 'true';
+	// 	}
+	// }
 
 	/**
 	 * 忘记密码页面
