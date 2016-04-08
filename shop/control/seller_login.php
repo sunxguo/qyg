@@ -42,7 +42,7 @@ class seller_loginControl extends BaseSellerControl {
         } else {
             showDialog('非法提交','','error');
         }
-        var_dump($_SESSION['veader']);
+        var_dump($_SESSION['verification']);
         $model_seller = Model('seller');
         $seller_info = $model_seller->getSellerInfo(array('seller_name' => $_POST['seller_name']));
         if($seller_info) {

@@ -45,13 +45,13 @@
             <label></label>
           </dd>
         </dl>
-        <dl>
+       <!--  <dl>
           <dt><?php echo $lang['login_register_email'];?></dt>
           <dd style="min-height:54px;">
             <input type="text" id="email" name="email" class="text tip" title="<?php echo $lang['login_register_input_valid_email'];?>" />
             <label></label>
           </dd>
-        </dl>
+        </dl> -->
         <?php if(C('captcha_status_register') == '1') { ?>
          <dl>
           <dt>获取验证码</dt>
@@ -154,19 +154,19 @@ $(function(){
                 required : true,
                 equalTo  : '#password'
             },
-            email : {
-                required : true,
-                email    : true,
-                remote   : {
-                    url : 'index.php?act=login&op=check_email',
-                    type: 'get',
-                    data:{
-                        email : function(){
-                            return $('#email').val();
-                        }
-                    }
-                }
-            },
+            // email : {
+            //     required : true,
+            //     email    : true,
+            //     remote   : {
+            //         url : 'index.php?act=login&op=check_email',
+            //         type: 'get',
+            //         data:{
+            //             email : function(){
+            //                 return $('#email').val();
+            //             }
+            //         }
+            //     }
+            // },
 
             
             agree : {
@@ -190,11 +190,11 @@ $(function(){
                 required : '<?php echo $lang['login_register_input_password_again'];?>',
                 equalTo  : '<?php echo $lang['login_register_password_not_same'];?>'
             },
-            email : {
-                required : '<?php echo $lang['login_register_input_email'];?>',
-                email    : '<?php echo $lang['login_register_invalid_email'];?>',
-                remote   : '<?php echo $lang['login_register_email_exists'];?>'
-            },
+            // email : {
+            //     required : '<?php echo $lang['login_register_input_email'];?>',
+            //     email    : '<?php echo $lang['login_register_invalid_email'];?>',
+            //     remote   : '<?php echo $lang['login_register_email_exists'];?>'
+            // },
             // <?php if(C('captcha_status_register') == '1') { ?>
             // captcha : {
             //     required : '<?php echo $lang['login_register_input_text_in_image'];?>',
