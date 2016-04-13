@@ -218,9 +218,7 @@
 						<%}%>
 						<%}%>
 						
-						
-						
-						
+		
 						<%if(IsHaveBuy=='0'){ %>
 						
 						<li class="bd-tdashed-dd">
@@ -257,11 +255,10 @@
 							<% } else if (goods_info.is_fcode == '1') { %>
 								<div class="opera-pd-item buy-now">F码购买</div>
 							<% } else { %>
-								<div style="margin-top:1%;"><img src="../images/kefu_03.png" style="padding:0 3px 3px 0; height:30px;"></div>
+								<div style="margin-top:1%;"><a href="javascript:void(0);" id="chat_show_user"><i id="new_msg" class="new_msg" style="display:none;"></i><img src="../images/kefu_03.png" style="padding:0 3px 3px 0; height:30px;"></a></div>
 								<a href="go_store.html?store_id=<%=goods_info.store_id%>" style="margin-top:2%;"><img src="../images/dianpu.png"  style=" padding-left:1px; border:0px;  height:30px;"></a>
 								<div id="pd-collects" style="margin-top:1.5%; "><img src="../images/shoucang.png"  style="  border:none; height:30px;"></div>
 								<div class="opera-pd-item buy-now ">立即购买</div>
-
 								<%if(goods_info.promotion_type!='groupbuy'){%>
 								<div class="opera-pd-item add-to-cart">加入购物车</div>
 								<%}%>
@@ -311,6 +308,8 @@
     <script type="text/javascript" src="../js/common.js"></script>
     <script type="text/javascript" src="../js/tmpl/common-top.js"></script>
     <script type="text/javascript" src="../js/tmpl/product_info.js"></script>
-
+    <script type="text/javascript" src="../../../chat/resoure/js/store.js"></script>
+    <script type="text/javascript" src="../../../chat/resoure/js/user.js"></script>
+    <script type="text/javascript" src="../../../chat/templates/default/cate.css"></script>
 </body>
 </html>

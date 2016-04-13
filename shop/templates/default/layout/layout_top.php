@@ -30,7 +30,7 @@
       </dl>
     </div>
     <?php } else {?>
-    <div class="user" nctype="a-barLoginBox"> <a href="javascript:void(0);" >
+    <div class="user" nctype="a-barLoginBox"> <a href="javascript:void(0);">
           <div class="avatar"><img src="<?php echo getMemberAvatar($_SESSION['avatar']);?>"/></div>
           <span class="tit">会员登录</span> </a> </div>
     <div class="user-login-box" nctype="barLoginBox" style="display:none;"> <i class="arrow"></i> <a href="javascript:void(0);" class="close" nctype="close-barLoginBox" title="关闭">X</a>
