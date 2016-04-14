@@ -327,7 +327,7 @@
 			msg_list[u_id][m_id] = msg;
 			if(dialog_show == 0 || obj.find("li[select_u_id='"+u_id+"']").size()==0) {//没有打开对话窗口时计数
 				user_list[u_id]['new_msg']++;
-				 ++;
+				 
 			} else {
 				if ( user_show == u_id) {
 					show_msg(u_id);//当前对话的会员消息设为已读
