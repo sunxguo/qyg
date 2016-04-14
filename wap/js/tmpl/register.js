@@ -47,7 +47,7 @@ $(function(){
 		var code = $("#code").val();
 		if($.sValid()){
 			$.ajax({
-				type:'post',s
+				type:'post',
 				url:ApiUrl+"/index.php?act=login&op=register",	
 				data:{username:username,password:pwd,password_confirm:password_confirm,code:code,client:client},
 				dataType:'json',
