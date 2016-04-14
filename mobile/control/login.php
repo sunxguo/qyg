@@ -39,7 +39,6 @@ class loginControl extends mobileHomeControl {
             $array['member_passwd']	= md5($_POST['password']);
         }
         $member_info = $model_member->getMemberInfo($array);
-        //var_dump($member_info);
         if(!empty($member_info)) {
             $token = $this->_get_token($member_info['member_id'], $member_info['member_name'], $_POST['client']);
             if($token){
@@ -62,9 +61,7 @@ class loginControl extends mobileHomeControl {
      * 登录生成token
      */
     private function _get_token($member_id, $member_name, $client) {
-        var_dump($member_id);
-        var_dump($member_name);
-        var_dump($client);
+        
         $model_mb_user_token = Model('mb_user_token');
 
         //重新登录后以前的令牌失效
@@ -73,7 +70,6 @@ class loginControl extends mobileHomeControl {
         //$condition['member_id'] = $member_id;
         //$condition['client_type'] = $_POST['client'];
         //$model_mb_user_token->delMbUserToken($condition);
-
         //生成新的token
         $mb_user_token_info = array();
         $token = md5($member_name . strval(TIMESTAMP) . strval(rand(0,999999)));
@@ -87,7 +83,7 @@ class loginControl extends mobileHomeControl {
         if($result) {
             return $token;
         } else {
-            return null;
+            return $token;
         }
     
     }
@@ -112,14 +108,12 @@ class loginControl extends mobileHomeControl {
         $register_info['username'] = $_POST['username'];
         $register_info['password'] = $_POST['password'];
         $register_info['password_confirm'] = $_POST['password_confirm'];
-        //$register_info['email'] = $_POST['email'];
-
         $member_info = $model_member->register($register_info);
         if(!isset($member_info['error'])){
 	        process::addprocess('reg');
-            $token = $this->_get_token($member_info['member_id'], $member_info['member_name'], $_POST['client']);
+            $token = $this->_get_token($member_info['member_id'], $_POST['username'], $_POST['client']);
             if($token) {
-                output_data(array('username' => $member_info['member_name'], 'key' => $token));
+                output_data(array('username' => $_POST['username'], 'key' => $token));
             } else {
                 output_error('注册失败');
             }

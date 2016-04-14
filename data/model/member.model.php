@@ -84,7 +84,6 @@ class memberModel extends Model {
 		$_SESSION['is_login']	= '1';
 		$_SESSION['member_id']	= $member_info['member_id'];
 		$_SESSION['member_name']= $member_info['member_name'];
-		$_SESSION['member_email']= $member_info['member_email'];
 		$_SESSION['is_buy']		= isset($member_info['is_buy']) ? $member_info['is_buy'] : 1;
 		$_SESSION['avatar'] 	= $member_info['member_avatar'];
 
@@ -162,35 +161,27 @@ class memberModel extends Model {
 		array("input"=>$register_info["username"],		"require"=>"true",		"message"=>'用户名不能为空'),
 		array("input"=>$register_info["password"],		"require"=>"true",		"message"=>'密码不能为空'),
 		array("input"=>$register_info["password_confirm"],"require"=>"true",	"validator"=>"Compare","operator"=>"==","to"=>$register_info["password"],"message"=>'密码与确认密码不相同'),
-		//array("input"=>$register_info["email"],			"require"=>"true",		"validator"=>"email", "message"=>'电子邮件格式不正确'),
 		);
 		$error = $obj_validate->validate();
 		if ($error != ''){
             return array('error' => $error);
 		}
-        
+
         // 验证用户名是否重复
 		$check_member_name	= $this->getMemberInfo(array('member_name'=>$register_info['username']));
 		if(is_array($check_member_name) and count($check_member_name) > 0) {
             return array('error' => '用户名已存在');
 		}
-  //var_dump($check_member_name);
-        // 验证邮箱是否重复
-		// $check_member_email	= $this->getMemberInfo(array('member_email'=>$register_info['email']));
-		// if(is_array($check_member_email) and count($check_member_email)>0) {
-  //           return array('error' => '邮箱已存在');
-		// }
+
+        
 		// 会员添加
 		$member_info	= array();
 		$member_info['member_name']		= $register_info['username'];
 		$member_info['member_passwd']	= $register_info['password'];
 		
-		//$member_info['member_email']	= $register_info['email'];
 		//添加邀请人(推荐人)会员积分 by abc.com
 		$member_info['inviter_id']		= $register_info['inviter_id'];
 		$insert_id	= $this->addMember($member_info);
-//var_dump($member_info);var_dump(132456);
-		exit;
 		if($insert_id) {
 		    //添加会员积分
 			if (C('points_isuse')){
@@ -251,8 +242,6 @@ class memberModel extends Model {
 		    $member_info['member_sinainfo']	= $param['member_sinainfo'];
 		    //添加邀请人(推荐人)会员积分 by abc.com
 		    $member_info['inviter_id']	        = $param['inviter_id'];
-		    // var_dump($member_info['member_name']);var_dump(1212312132);
-		    // var_dump($member_info);
 		    $insert_id	= $this->table('member')->insert($member_info);
 		    if (!$insert_id) {
 		        throw new Exception();
