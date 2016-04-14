@@ -29,17 +29,15 @@ $(function(){
         }  
     });
 
-	 
-
 	$('#loginbtn').click(function(){	
 		if(!(/^1[34578]\d{9}$/.test($("#user_name").val())))
 	    {
 	        alert("请输入正确的手机号");
 	    }
-	     if($("#code").val() == '')
-	     {
-	     	alert('验证码必填');
-	     }
+	     // if($("#code").val() == '')
+	     // {
+	     // 	alert('验证码必填');
+	     // }
 		var username =$("#user_name").val();
 		var pwd = $("#userpwd").val();
 		var password_confirm = $("#password_confirm").val();

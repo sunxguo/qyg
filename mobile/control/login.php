@@ -62,6 +62,9 @@ class loginControl extends mobileHomeControl {
      * 登录生成token
      */
     private function _get_token($member_id, $member_name, $client) {
+        var_dump($member_id);
+        var_dump($member_name);
+        var_dump($client);
         $model_mb_user_token = Model('mb_user_token');
 
         //重新登录后以前的令牌失效
@@ -81,7 +84,6 @@ class loginControl extends mobileHomeControl {
         $mb_user_token_info['client_type'] = $_POST['client'] == null ? 'Android' : $_POST['client'] ;
 
         $result = $model_mb_user_token->addMbUserToken($mb_user_token_info);
-        //var_dump($result);
         if($result) {
             return $token;
         } else {
@@ -113,7 +115,7 @@ class loginControl extends mobileHomeControl {
         //$register_info['email'] = $_POST['email'];
 
         $member_info = $model_member->register($register_info);
-        if(!isset($member_info['error'])) {
+        if(!isset($member_info['error'])){
 	        process::addprocess('reg');
             $token = $this->_get_token($member_info['member_id'], $member_info['member_name'], $_POST['client']);
             if($token) {
@@ -165,7 +167,7 @@ class loginControl extends mobileHomeControl {
             $content="【全优购】本次验证码为".$mcode;//要发送的短信内容
             // $phone =;
             $sendurl = $smsapi."sms?u=".$user."&p=".$pass."&m=".$phone."&c=".urlencode($content);
-            $result =file_get_contents($sendurl) ;
+            $result =file_get_contents($sendurl);
             //return $_SESSION['mcode'];
         }
 }
