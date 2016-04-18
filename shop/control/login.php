@@ -28,7 +28,7 @@ class loginControl extends BaseHomeControl {
 		//检查登录状态
 		$model_member->checkloginMember();
 		if ($_GET['inajax'] == 1 && C('captcha_status_login') == '1'){
-		    $script = "document.getElementById('codeimage').src='".APP_SITE_URL."/index.php?act=seccode&op=makecode&nchash=".getNchash()."&t=' + Math.random();";
+		    $script = "document.getElementById('codeimage').src='".APP_SITE_URL."/control/seccodes.php&t=' + Math.random();";
 		}
 		$result = chksubmit(true,C('captcha_status_login'),'num');
 		if ($result !== false){
@@ -36,10 +36,8 @@ class loginControl extends BaseHomeControl {
 			{
 				showDialog($lang['login_index_login_illegal'],'','error',$script);
 			}
-			elseif ($result === -12)
-			{
-				showDialog($lang['login_index_wrong_checkcode'],'','error',$script);
-			}
+			else
+
 			if(process::islock('login'))
 			{
 				showDialog($lang['nc_common_op_repeat'],SHOP_SITE_URL,'','error',$script);
@@ -165,7 +163,7 @@ class loginControl extends BaseHomeControl {
 		$model_member	= Model('member');
 		$model_member->checkloginMember();
 		$result = chksubmit(true,C('captcha_status_register'),'num');
-		//var_dump($result);exit;
+		
 		if ($result){
 			if ($result === -11){
 				showDialog($lang['invalid_request'],'','error');
@@ -178,6 +176,7 @@ class loginControl extends BaseHomeControl {
 		{
 		    showDialog($lang['invalid_request'],'','error');
 		}	
+
     	if(!preg_match("/^1[34578]\d{9}$/", $_POST['user_name']))
     	{
     		showDialog('请输入正确格式的手机号','','error');
@@ -192,6 +191,7 @@ class loginControl extends BaseHomeControl {
         $register_info['password'] = $_POST['password'];
         $register_info['password_confirm'] = $_POST['password_confirm'];
         $register_info['email'] = $_POST['email'];
+
 		//添加奖励积分zmr>v30
 		$zmr=intval($_COOKIE['zmr']);
 		if($zmr>0)
@@ -202,9 +202,12 @@ class loginControl extends BaseHomeControl {
 				$zmr=0;
 			}
 		}
+
 		$register_info['inviter_id'] = $zmr;
         $member_info = $model_member->register($register_info);
-        if(!isset($member_info['error'])) {
+
+        // if(!isset($member_info['error'])) {
+
             $model_member->createSession($member_info,true);
 			process::addprocess('reg');
 
@@ -216,9 +219,12 @@ class loginControl extends BaseHomeControl {
 
 			$_POST['ref_url']	= (strstr($_POST['ref_url'],'logout')=== false && !empty($_POST['ref_url']) ? $_POST['ref_url'] : 'index.php?act=member_information&op=member');
 			redirect($_POST['ref_url']);
-        } else {
-			showDialog($member_info['error']);
-        }   	
+   //      } else {
+
+			// showDialog($member_info['error']);
+			// var_dump($result);exit;	
+   //      }   
+
 	}
 
 	public function sendnoteOp()
@@ -322,13 +328,11 @@ class loginControl extends BaseHomeControl {
 	public function find_passwordOp(){
 		Language::read('home_login_register');
 		$lang	= Language::getLangContent();
-
+        
 		$result = chksubmit(true,true,'num');
 		if ($result !== false){
 		    if ($result === -11){
 		        showDialog('非法提交');
-		    }elseif ($result === -12){
-		        showDialog('验证码错误');
 		    }
 		}
 
@@ -350,17 +354,18 @@ class loginControl extends BaseHomeControl {
 		if(empty($_POST['email'])){
 			showDialog($lang['login_password_input_email'],'reload');
 		}
-
 		if(strtoupper($_POST['email'])!=strtoupper($member['member_email'])){
 		    process::addprocess('forget');
 			showDialog($lang['login_password_email_not_exists'],'reload');
 		}
+
 		process::clear('forget');
 		//产生密码
 		$new_password	= random(15);
 		if(!($member_model->editMember(array('member_id'=>$member['member_id']),array('member_passwd'=>md5($new_password))))){
 			showDialog($lang['login_password_email_fail'],'reload');
 		}
+// var_dump($member['member_email']);exit;
 
 		$model_tpl = Model('mail_templates');
 		$tpl_info = $model_tpl->getTplInfo(array('code'=>'reset_pwd'));
@@ -373,7 +378,9 @@ class loginControl extends BaseHomeControl {
 		$message	= ncReplaceText($tpl_info['content'],$param);
 
 		$email	= new Email();
+
 		$result	= $email->send_sys_email($_POST["email"],$subject,$message);
+
 		showDialog('新密码已经发送至您的邮箱，请尽快登录并更改密码！','','succ','',5);
 	}
 
@@ -418,4 +425,41 @@ class loginControl extends BaseHomeControl {
 	   showMessage('邮箱设置成功','index.php?act=member_security&op=index');
 
 	}
+
+	 // public function loginOp() {
+  //       $result = chksubmit(true,true,'num');
+  //       if ($result){
+  //           if ($result === -11){
+  //               showDialog('用户名或密码错误','','error');
+  //           } 
+  //           // else
+  //           // if ($result === -12){
+  //           //     showDialog('验证码错误','','error');
+  //           // }
+  //       } else {
+  //           showDialog('非法提交','','error');
+  //       }
+
+  //       $model_seller = Model('member');
+  //       $seller_info = $model_seller->getMemberInfo(array('member_name' => $_POST['user_name']));
+  //       if($seller_info) {
+
+  //           $model_member = Model('member');
+  //           $member_info = $model_member->getMemberInfo(
+  //               array(
+  //                   'member_name' => $seller_info['member_name'],
+  //                   'member_passwd' => md5($_POST['password'])
+  //               )
+  //           );
+  //           if($member_info) {
+               
+  //               redirect('index.php?act=member_information&op=member');
+  //           } else {
+  //               showMessage('用户名密码错误', '', '', 'error');
+  //           }
+  //       } else {
+  //           showMessage('用户名密码错误', '', '', 'error');
+  //       }
+  //   }
+
 }

@@ -43,7 +43,7 @@
           <dt><?php echo $lang['login_register_code'];?></dt>
           <dd style="min-height:54px;">
             <input type="text" name="captcha" class="text w50 fl" id="captcha" maxlength="4" size="10" />
-            <img src="index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>" title="<?php echo $lang['login_index_change_checkcode'];?>" name="codeimage" border="0" id="codeimage" class="fl ml5"> <a href="javascript:void(0);" class="ml5" onclick="javascript:document.getElementById('codeimage').src='index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>&t=' + Math.random();"><?php echo $lang['login_password_change_code']; ?></a>
+            <img src="<?php echo SHOP_SITE_URL?>/control/seccodes.php" title="<?php echo $lang['login_index_change_checkcode'];?>" name="codeimage" border="0" id="codeimage" class="fl ml5"> <a href="javascript:void(0);" class="ml5" onclick="javascript:document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/control/seccodes.php?>&t=' + Math.random();"><?php echo $lang['login_password_change_code']; ?></a>
             <label></label>
           </dd>
         </dl>
@@ -65,7 +65,7 @@ $(function(){
         if($("#find_password_form").valid()){
         	ajaxpost('find_password_form', '', '', 'onerror');
         } else{
-        	document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>&t=' + Math.random();
+        	document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/control/seccodes.php&t=' + Math.random();
         }
     });
     $('#find_password_form').validate({

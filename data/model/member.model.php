@@ -84,7 +84,6 @@ class memberModel extends Model {
 		$_SESSION['is_login']	= '1';
 		$_SESSION['member_id']	= $member_info['member_id'];
 		$_SESSION['member_name']= $member_info['member_name'];
-		$_SESSION['member_email']= $member_info['member_email'];
 		$_SESSION['is_buy']		= isset($member_info['is_buy']) ? $member_info['is_buy'] : 1;
 		$_SESSION['avatar'] 	= $member_info['member_avatar'];
 
@@ -162,7 +161,6 @@ class memberModel extends Model {
 		array("input"=>$register_info["username"],		"require"=>"true",		"message"=>'用户名不能为空'),
 		array("input"=>$register_info["password"],		"require"=>"true",		"message"=>'密码不能为空'),
 		array("input"=>$register_info["password_confirm"],"require"=>"true",	"validator"=>"Compare","operator"=>"==","to"=>$register_info["password"],"message"=>'密码与确认密码不相同'),
-		array("input"=>$register_info["email"],			"require"=>"true",		"validator"=>"email", "message"=>'电子邮件格式不正确'),
 		);
 		$error = $obj_validate->validate();
 		if ($error != ''){
@@ -175,16 +173,12 @@ class memberModel extends Model {
             return array('error' => '用户名已存在');
 		}
 
-        // 验证邮箱是否重复
-		$check_member_email	= $this->getMemberInfo(array('member_email'=>$register_info['email']));
-		if(is_array($check_member_email) and count($check_member_email)>0) {
-            return array('error' => '邮箱已存在');
-		}
+        
 		// 会员添加
 		$member_info	= array();
 		$member_info['member_name']		= $register_info['username'];
 		$member_info['member_passwd']	= $register_info['password'];
-		$member_info['member_email']		= $register_info['email'];
+		
 		//添加邀请人(推荐人)会员积分 by abc.com
 		$member_info['inviter_id']		= $register_info['inviter_id'];
 		$insert_id	= $this->addMember($member_info);
@@ -232,7 +226,6 @@ class memberModel extends Model {
 		    $member_info['member_id']			= $param['member_id'];
 		    $member_info['member_name']			= $param['member_name'];
 		    $member_info['member_passwd']		= md5(trim($param['member_passwd']));
-		    $member_info['member_email']		= $param['member_email'];
 		    $member_info['member_time']			= TIMESTAMP;
 		    $member_info['member_login_time'] 	= TIMESTAMP;
 		    $member_info['member_old_login_time'] = TIMESTAMP;

@@ -39,14 +39,14 @@ if (cookie_skin) {
 	require_once($tpl_file);
 ?>
 <?php if ($output['setting_config']['debug'] == 1){?>
-<div id="think_page_trace" class="trace">
+<!-- <div id="think_page_trace" class="trace">
   <fieldset id="querybox">
     <legend><?php echo $lang['nc_debug_trace_title'];?></legend>
     <div>
       <?php print_r(\Shopnc\Tpl::showTrace());?>
     </div>
   </fieldset>
-</div>
+</div> -->
 <?php }?>
 </body>
 </html>

@@ -133,6 +133,8 @@ final class Base{
 		session_start();
 	}
 
+	
+
 	public static function autoload($class){
 		$class = strtolower($class);
 		if (ucwords(substr($class,-5)) == 'Class' ){

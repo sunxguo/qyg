@@ -21,12 +21,12 @@
       <h3><?php echo $lang['login_index_user_login'];?></h3>
     </div>
     <div class="nc-login-content" id="demo-form-site">
-      <form id="login_form" method="post" action="127.0.0.1/shop/index.php?act=login&op=login"  class="bg">
+      <form id="login_form" method="post" action="index.php?act=login&op=login"  class="bg">
         <?php Security::getToken();?>
         <input type="hidden" name="form_submit" value="ok" />
         <input name="nchash" type="hidden" value="<?php echo getNchash();?>" />
         <dl>
-          <dt><?php echo $lang['login_index_username'];?></dt>
+          <dt><?php echo $lang['login_index_username'];?> </dt>
           <dd style="min-height:54px;">
             <input type="text" class="text" autocomplete="off"  name="user_name" id="user_name" autofocus >
             <label></label>
@@ -44,7 +44,7 @@
           <dt><?php echo $lang['login_index_checkcode'];?></dt>
           <dd style="min-height:54px;">
               <input type="text" name="captcha" autocomplete="off" class="text w50 fl" id="captcha" maxlength="4" size="10" />
-            <img src="control/seccodes.php" name="codeimage" border="0" id="codeimage" / > <a href="javascript:void(0)" class="ml5" onclick="javascript:document.getElementById('codeimage').src='control/seccodes.php?>&t=' + Math.random();"><?php echo $lang['login_index_change_checkcode'];?></a>
+            <img src="control/seccodes.php" name="codeimage" border="0" id="codeimage" / > <a href="javascript:void(0)" class="ml5" onclick="javascript:document.getElementById('codeimage').src='control/seccodes.php?&t=' + Math.random();"><?php echo $lang['login_index_change_checkcode'];?></a>
             <label></label>
           </dd>
         </dl>
@@ -95,7 +95,7 @@ $(document).ready(function(){
             ,captcha : {
                 required : true,
                 remote   : {
-                    url : '<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=check?>',
+                    url : '<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=check',
                     type: 'get',
                     data:{
                         captcha : function(){

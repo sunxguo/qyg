@@ -47,7 +47,7 @@
 							<div id="forwardseccode<?php echo $output['strace_info']['strace_id'];?>" class="seccode" style="display: none;">
 								<label for="captcha"><?php echo $lang['nc_checkcode'].$lang['nc_colon']; ?></label>
 								<input name="captcha" class="text" type="text" size="4" maxlength="4"/>
-								<img src="" title="<?php echo $lang['wrong_checkcode_change']; ?>" name="codeimage" onclick="this.src='index.php?act=seccode&op=makecode&nchash=<?php echo $output['nchash'];?>&t=' + Math.random()"/> <span><?php echo $lang['wrong_seccode'];?></span>
+								<img src="" title="<?php echo $lang['wrong_checkcode_change']; ?>" name="codeimage" onclick="this.src='control/seccodes.php&t=' + Math.random()"/> <span><?php echo $lang['wrong_seccode'];?></span>
 								<input type="hidden" name="nchash" value="<?php echo $output['nchash'];?>"/>
 							</div>
 							<input type="text" style="display:none;" />

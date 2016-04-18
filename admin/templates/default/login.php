@@ -51,13 +51,13 @@ title="<?php echo $lang['login_index_password_pattern'];?>">
 
         <div class="arrow"></div>
 
-         <div class="code-img"><img src="control/seccodes.php" name="codeimage" id="codeimage" border="0"/></div>
+         <div class="code-img"><img src="<?php echo SHOP_SITE_URL?>/control/seccodes.php" name="codeimage" id="codeimage" border="0"/></div>
 
         <a href="JavaScript:void(0);" id="hide" class="close" title="<?php echo $lang['login_index_close_checkcode'];?>"><i></i></a><a href="JavaScript:void(0);" onclick="javascript:document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/control/seccodes.php?>&t=' + Math.random();" class="change" title="看不清,点击更换验证码"><i></i></a> </div>
 
            
             
-              <input name="captcha" type="text" required class="input-code" id="captcha" placeholder="<?php echo $lang['login_index_checkcode'];?>" pattern="[A-z0-9]{4}" title="<?php echo $lang['login_index_checkcode_pattern'];?>" autocomplete="off" value="" >  
+              <input name="captcha" type="text" required class="input-code" id="captcha" placeholder="<?php echo $lang['login_index_checkcode'];?>" pattern="[A-z0-9]{4}" title="<?php echo $lang['login_index_checkcode_pattern'];?>" autocomplete="off" value="" > 
 
       </span> <span>
 

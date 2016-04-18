@@ -52,8 +52,8 @@
 				  <dt>验证码：</dt>
 				  <dd>
 					<input type="text" name="captcha" class="text w50 fl" id="captcha" maxlength="4" size="10" />
-					<a href="JavaScript:void(0);" onclick="javascript:document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>&t=' + Math.random();" class="change" title="看不清，换一张">
-					<img src="<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=makecode&nchash=<?php echo getNchash();?>" class="fl ml5" name="codeimage" id="codeimage" border="0"/></a>
+					<a href="JavaScript:void(0);" onclick="javascript:document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/control/seccodes.php&t=' + Math.random();" class="change" title="看不清，换一张">
+					<img src="<?php echo SHOP_SITE_URL?>/control/seccodes.php" class="fl ml5" name="codeimage" id="codeimage" border="0"/></a>
 					<label></label>
 				  </dd>
 				</dl>

@@ -40,7 +40,7 @@
 			  		connect_n++;
 				  	set_user_info(u_id,"u_name",user_info['u_name']);
 				  	set_user_info(u_id,"avatar",user_info['avatar']);
-				  	if ( u_id != user['u_id'] && user_info['seller'] == 1 ) {
+				  	if ( u_id != user['u_id'] && user_info['seller'] == 1 ){
 				  	    seller_list[u_id] = user_info;
 				  	    set_user_info(u_id,"seller_id",user_info['seller_id']);
 				  	    set_user_info(u_id,"seller_name",user_info['seller_name']);
@@ -50,7 +50,6 @@
 				setTimeout("getconnect()",1000);
 				$("#web_chat_dialog").prepend(chat_user_list);
 				$("#web_chat_dialog").after(web_info['html_store_msg']);
-
 				$('#chat_user_list').perfectScrollbar();
 				setInterval( function () {
 					$.get(CHAT_SITE_URL+'/index.php?act=web_chat&op=get_session&key=member_id');

@@ -30,11 +30,11 @@
       </dl>
     </div>
     <?php } else {?>
-    <div class="user" nctype="a-barLoginBox"> <a href="javascript:void(0);" >
+    <div class="user" nctype="a-barLoginBox"> <a href="javascript:void(0);">
           <div class="avatar"><img src="<?php echo getMemberAvatar($_SESSION['avatar']);?>"/></div>
           <span class="tit">会员登录</span> </a> </div>
     <div class="user-login-box" nctype="barLoginBox" style="display:none;"> <i class="arrow"></i> <a href="javascript:void(0);" class="close" nctype="close-barLoginBox" title="关闭">X</a>
-      <form id="login_form" method="post" action="index.php?act=login&op=login" onsubmit="ajaxpost('login_form', '', '', 'onerror')">
+      <form id="login_form" method="post" action="index.php?act=login&op=login"  >
         <?php Security::getToken();?>
         <input type="hidden" name="form_submit" value="ok" />
         <input name="nchash" type="hidden" value="<?php echo getNchash('login','index');?>" />
@@ -54,7 +54,7 @@
         </dl>
         <?php if(C('captcha_status_login') == '1') { ?>
         <dl>
-          <dt><strong>验证码</strong><a href="javascript:void(0)" class="ml5" onclick="javascript:document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=makecode&nchash=<?php echo getNchash('login','index');?>&t=' + Math.random();">更换验证码</a></dt>
+          <dt><strong>验证码</strong><a href="javascript:void(0)" class="ml5" onclick="javascript:document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/control/seccodes.php?&t=' + Math.random();">更换验证码</a></dt>
           <dd>
             <input tabindex="3" type="text" name="captcha" autocomplete="off" class="text w130" id="captcha2" maxlength="4" size="10" />
             <img src="" name="codeimage" border="0" id="codeimage" class="vt">
@@ -175,7 +175,7 @@ $(function() {
     // 右侧bar登录
     $('div[nctype="a-barLoginBox"]').click(function(){
         $('div[nctype="barLoginBox"]').toggle();
-        document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/index.php?act=seccode&op=makecode&nchash=c93636e5&t=' + Math.random();
+        document.getElementById('codeimage').src='<?php echo SHOP_SITE_URL?>/control/seccodes.php?>&t=' + Math.random();
     });
     $('a[nctype="close-barLoginBox"]').click(function(){
         $('div[nctype="barLoginBox"]').toggle();

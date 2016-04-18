@@ -63,13 +63,13 @@
   <?php echo html_entity_decode($output['setting_config']['statistics_code'],ENT_QUOTES); ?> </div>
 <?php if ($GLOBALS['setting_config']['debug'] == 1){?>
 <div id="think_page_trace" class="trace">
-  <fieldset id="querybox">
+<!--   <fieldset id="querybox">
     <legend><?php echo $lang['nc_debug_trace_title'];?></legend>
     <div>
       <?php print_r(Tpl::showTrace());?>
     </div>
   </fieldset>
-</div>
+</div> -->
 <?php }?>
 <script language="javascript">
 var searchTxt = '<?php echo $lang['nc_searchdefault']; ?>';

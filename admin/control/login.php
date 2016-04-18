@@ -19,6 +19,10 @@ class LoginControl extends SystemControl {
 		    if ($result === -11){
 		        showMessage('非法请求');
 		    }
+		    // if ($result === -12){
+		    //     showMessage(L('login_index_checkcode_wrong'));
+		    // }
+		    //var_dump($_POST['captcha']);
 		 
 		    if (process::islock('admin')) {
 		        showMessage('您的操作过于频繁，请稍后再试');
@@ -27,6 +31,7 @@ class LoginControl extends SystemControl {
 			$obj_validate->validateparam = array(
 			array("input"=>$_POST["user_name"],		"require"=>"true", "message"=>L('login_index_username_null')),
 			array("input"=>$_POST["password"],		"require"=>"true", "message"=>L('login_index_password_null')),
+			array("input"=>$_POST["captcha"],		"require"=>"true", "message"=>L('login_index_checkcode_null')),
 			
 			);
 			$error = $obj_validate->validate();

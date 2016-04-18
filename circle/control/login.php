@@ -24,7 +24,7 @@ class loginControl extends BaseCircleControl {
 		$model_member	= Model('member');
 		//检查登录状态
 		$model_member->checkloginMember();
-		$script="document.getElementsByName('codeimage')[0].src='".APP_SITE_URL."/index.php?act=seccode&op=makecode&nchash='+NC_HASH+'&t=' + Math.random();";
+		$script="document.getElementsByName('codeimage')[0].src='".APP_SITE_URL."/control/seccodes.php?>&t=' + Math.random();";
 		$result = chksubmit(true,true,'num');
 		if ($result){
 			if ($result === -11){

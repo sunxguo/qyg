@@ -49,7 +49,7 @@
           <dt><?php echo $lang['login_register_code'];?>: </dt>
           <dd>
             <input type="text" id="captcha" name="captcha" class="text w50 fl tip" maxlength="4" size="10" title="<?php echo $lang['login_register_input_code'];?>" />
-            <img src="index.php?act=seccode&op=makecode&nchash=<?php echo $output['nchash'];?>" title="<?php echo $lang['login_index_change_checkcode'];?>" name="codeimage" border="0" id="codeimage" onclick="this.src='index.php?act=seccode&op=makecode&nchash=<?php echo $output['nchash'];?>&t=' + Math.random()"  class="fl ml5"><a href="javascript:void(0)" class="fl ml5" onclick="javascript:document.getElementById('codeimage').src='index.php?act=seccode&op=makecode&nchash=<?php echo $output['nchash'];?>&t=' + Math.random();"><?php echo $lang['login_index_change_checkcode'];?></a>
+            <img src="index.php?act=seccode&op=makecode&nchash=<?php echo $output['nchash'];?>" title="<?php echo $lang['login_index_change_checkcode'];?>" name="codeimage" border="0" id="codeimage" onclick="this.src='control/seccodes.php"  class="fl ml5"><a href="javascript:void(0)" class="fl ml5" onclick="javascript:document.getElementById('codeimage').src='control/seccodes.php&t=' + Math.random();"><?php echo $lang['login_index_change_checkcode'];?></a>
             <input name="nchash" type="hidden" value="<?php echo $output['nchash'];?>" />
             <label></label>
           </dd>
