@@ -32,7 +32,6 @@ class web_chatControl extends BaseControl {
 		if (($member_id < 1) || ($member_id != $f_id)) $this->error(Language::get('nc_member_chat_login'));
 		$member = $model_chat->getMember($t_id);
 		if ($t_name != $member['member_name']) $this->error(Language::get('nc_member_chat_name_error'));
-
 		$msg = array();
 		$msg['f_id'] = $f_id;
 		$msg['f_name'] = $member_name;
@@ -45,6 +44,7 @@ class web_chatControl extends BaseControl {
 		} else {
 			$this->error(Language::get('nc_member_chat_add_error'));
 		}
+
 	}
 	/**
 	 * friends info
@@ -91,6 +91,7 @@ class web_chatControl extends BaseControl {
 		$member_list = $model_chat->getRecentList(array('f_id'=> $f_id,'add_time'=>array('egt',$add_time30)),10,$member_list);
 		$member_list = $model_chat->getRecentFromList(array('t_id'=> $f_id,'add_time'=>array('egt',$add_time30)),10,$member_list);
 		$this->json($member_list);
+		// Tpl::showpage('wep_chat');
 	}
 	/**
 	 * member info
@@ -134,7 +135,6 @@ class web_chatControl extends BaseControl {
 			$condition_sql = " add_time >= '".$time_from[$key]."' ";
 			$condition_sql .= " and ((f_id = '".$f_id."' and t_id = '".$t_id."') or (f_id = '".$t_id."' and t_id = '".$f_id."'))";
 			$list = $model_chat->getLogList($condition_sql,$page);
-
 			$chat_log['list'] = $list;
 			$chat_log['total_page'] = $model_chat->gettotalpage();
 			$this->json($chat_log);

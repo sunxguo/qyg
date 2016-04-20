@@ -62,6 +62,7 @@
 						$.get(CHAT_SITE_URL+'/index.php?act=web_chat&op=get_session&key=member_id');
 					}, time_max*60000);
 					$("#chat_show_user").click(function(){
+						alert(123456);
 					    chat_show_list();
 					});
 			  }
