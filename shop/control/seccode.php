@@ -37,6 +37,7 @@ class seccodeControl{
 		$code->datapath =  BASE_DATA_PATH.'/resource/seccode/';
 		$code->display();
 		//var_dump($seccode);
+		// echo  $code->code;
 	}
 
 	/**
