@@ -39,12 +39,12 @@ $config['db']['1']['dbcharset']    = 'UTF-8';
 $config['db']['1']['dbhost']       = '221.204.237.30';
 */
 
-$config['db']['1']['dbhost']       = '182.92.156.106';
+$config['db']['1']['dbhost']       = 'localhost';
 
 $config['db']['1']['dbport']       = '3306';
 $config['db']['1']['dbuser']       = 'root';
-$config['db']['1']['dbpwd']        = '19910910jacksun';
-$config['db']['1']['dbname']       = 'qyg';
+$config['db']['1']['dbpwd']        = 'quanyougou123';
+$config['db']['1']['dbname']       = '33hao';
 $config['db']['1']['dbcharset']    = 'UTF-8';
 $config['db']['slave']                  = $config['db']['master'];
 $config['session_expire'] 	= 3600;
