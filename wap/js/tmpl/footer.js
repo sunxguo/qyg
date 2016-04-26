@@ -1,7 +1,6 @@
 $(function (){
 	var key = getcookie('key');
-    var memberHtml = '<a class="btn mr5" href="'+WapSiteUrl+'/tmpl/member/member.html?act=member"">登录</a>
-    <a class="btn mr5" href="'+WapSiteUrl+'/tmpl/member/register.html">注册</a>';
+    var memberHtml = '<a class="btn mr5" href="'+WapSiteUrl+'/tmpl/member/member.html?act=member"">登录</a><a class="btn mr5" href="'+WapSiteUrl+'/tmpl/member/register.html">注册</a>';
     var act = GetQueryString("act");
     if((act && act == "member") || key!=''){
         memberHtml = '<a class="btn mr5" href="'+WapSiteUrl+'/tmpl/member/member.html?act=member"">个人中心</a><a class="btn mr5" id="logoutbtn" href="javascript:void(0);">注销</a>';
