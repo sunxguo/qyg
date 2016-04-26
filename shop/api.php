@@ -43,6 +43,7 @@ if($_GET['act'] == 'adv'){
 	define('SHOP_SITE_URL',$site_url);
 	if ($_GET['op'] == 'g'){
 		include 'api/qq/oauth/qq_callback.php';
+		$_SESSION["callback"]="http://quanyougo.com/wap";
 	}else{
 		include 'api/qq/oauth/qq_login.php';
 	}
