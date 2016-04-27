@@ -17,6 +17,7 @@ $(function (){
 			+'<a href="'+WapSiteUrl+'/shop_class.html" class="standard">所有店铺</a>'
             +'<a href="'+WapSiteUrl+'/tmpl/article_list.html?ac_id=2" class="standard">帮助中心</a>'
             +'<a href="'+WapSiteUrl+'/tmpl/article_list.html?ac_id=7">关于我们</a>'
+            +'<a class="btn mr5" href="'+SiteUrl+'/shop/api.php?act=toqq&mobile=mobile">QQ登录</a>'
             +'</p>'
             /*+'<p class="copyright">'
                 +'版权所有 2014-2015 © www.33hao.com'
