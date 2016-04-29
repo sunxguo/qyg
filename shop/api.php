@@ -46,6 +46,9 @@ if($_GET['act'] == 'adv'){
 	}else{
 		include 'api/qq/oauth/qq_login.php';
 	}
+	if ($_GET['mobile'] == 'mobile'){
+		$_SESSION['m']=$_GET['mobile'];//判断是否手机登陆
+	}
 }elseif ($_GET['act'] == 'tosina'){
 	define('SHOP_SITE_URL',$site_url);
 	if ($_GET['op'] == 'g'){

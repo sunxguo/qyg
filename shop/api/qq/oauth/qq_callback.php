@@ -71,7 +71,7 @@ function get_openid()
     //set openid to session
     $_SESSION["openid"] = $user->openid;
     //33h ao v3-b 10 33h ao.co m
-    $_SESSION['m']=$_GET['m'];//判断是否手机登陆
+    // $_SESSION['m']=$_GET['mobile'];//判断是否手机登陆
 }
 
 //QQ登录成功后的回调地址,主要保存access token
