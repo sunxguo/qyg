@@ -41,8 +41,8 @@
         imagesetpixel($im, mt_rand(0, $width), mt_rand(0, $height), $font_color);
     } 
     // 画验证码
-    // @imagefttext($im, $size , 0, 5, $size + 3, $text_color, 'c:\\WINDOWS\\Fonts\\simsun.ttc', $code);
-    @imagefttext($im, $size , 0, 5, $size + 3, $text_color, '../msyh.ttf', $code); 
+    // @imagefttext($im, $size , 0, 5, $size + 3, $text_color, 'c:\\WINDOWS\\Fonts\\simsun.ttc', $code); windows服务器
+    @imagefttext($im, $size , 0, 5, $size + 3, $text_color, '../msyh.ttf', $code); //linux 服务器  而且 需要根据 ../msyh.ttf  路径 将字体文件放到执行文件夹中  这个是放在改文件的上级文件夹中
     $_SESSION['veader'] = $code;
     // header("Cache-Control: max-age=1, s-maxage=1, no-cache, must-revalidate");
     header("Content-type: image/png;charset=gb2312");
