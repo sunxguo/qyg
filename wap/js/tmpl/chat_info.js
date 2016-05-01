@@ -42,12 +42,12 @@ $(function() {
         }
         var t = document.createElement("script");
         t.type = "text/javascript";
-        t.src = nodeSiteUrl + "/socket.io/socket.io.js";
+        t.src = nodeSiteUrl + "/resource/socket.io.js";
         document.body.appendChild(t);
         a();
         function a() {
             setTimeout(function() {
-                if (typeof io === "function") {
+                if (typeof io === "object") {
                     s()
                 } else {
                     a()
@@ -65,9 +65,9 @@ $(function() {
             a["s_id"] = memberInfo.store_id;
             a["s_name"] = memberInfo.store_name;
             a["s_avatar"] = memberInfo.store_avatar;
-            socket = io(e, {
-                path: "/socket.io",
-                reconnection: false
+            socket = io.connect(e, {
+                resource: "resource",
+                reconnect: false
             });
             socket.on("connect",
             function() {
