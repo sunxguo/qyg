@@ -58,6 +58,6 @@ $(function() {
 
 });
 </script>
-<?php echo getChat($layout);?>
+<?php //echo getChat($layout);?>
 </body>
 </html>

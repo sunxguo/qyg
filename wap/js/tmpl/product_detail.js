@@ -1,4 +1,5 @@
 $(function (){
+	$("#bottom").hide();
     var unixTimeToDateString = function(ts, ex) {
         ts = parseFloat(ts) || 0;
         if (ts < 1) {
@@ -108,6 +109,9 @@ $(function (){
             if (data.goods_info.mobile_body) {
                 $('#mobile_body').html(data.goods_info.mobile_body);
             }
+				$(".kefu_im").click(function(){
+	window.location.href=WapSiteUrl+"/tmpl/member/chat_info.html?goods_id="+goods_id+"&t_id="+data.store_info.member_id});
+	
 
             //图片轮播
             picSwipe();

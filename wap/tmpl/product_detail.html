@@ -218,10 +218,6 @@
 						</li>
 						<%}%>
 						<%}%>
-						
-		
-						<%if(IsHaveBuy=='0'){ %>
-						
 						<li class="bd-tdashed-dd">
 							<span class="key-no">
 								数量：
@@ -236,41 +232,6 @@
 								</span>
 							</div>
 						</li>
-						
-						<div class="content">
-					        <div class="pddetail-cnt">
-					            <div class="pd-detail-tab">
-					                <div  id="fixed-tab-pannel">
-					                     <div class="fixed-tab-pannel"></div>
-					                </div>
-					            </div>
-					        </div>
-					    </div>
-
-						<li class="bd-tdashed-dd" style="position: fixed;bottom: -24px; padding-top:0px;">
-							<div class="opera-product-wp">
-							<% if (goods_info.is_virtual == '1') { %>
-								<div class="opera-pd-item buy-now">立即购买</div>
-							<% } else if (goods_info.is_presell == '1') { %>
-								<div class="opera-pd-item buy-now">预售购买</div>
-							<% } else if (goods_info.is_fcode == '1') { %>
-								<div class="opera-pd-item buy-now">F码购买</div>
-							<% } else { %>
-								
-								<a href="go_store.html?store_id=<%=goods_info.store_id%>" style="margin-top:2%;"><img src="../images/dianpu.png"  style=" padding-left:1px; border:0px;  height:30px;"></a>
-								<div id="pd-collects" style="margin-top:1.5%; "><img src="../images/shoucang.png"  style="  border:none; height:30px;"></div>
-								<div class="opera-pd-item buy-now ">立即购买</div>
-								<%if(goods_info.promotion_type!='groupbuy'){%>
-								<div class="opera-pd-item add-to-cart">加入购物车</div>
-								<%}%>
-							<% } %>
-							</div>
-						</li>
-				     <% } else {%>
-					 <li class="bd-tdashed-dd">
-					<div class="opera-pd-item no-buy-now">您已参加本商品抢购活动</div></li>
-					 <%} %> 
-					  
 					</ul>
 				</div>
 				<div class="pddc-gray-warp">
@@ -286,8 +247,64 @@
 									<span class="pddc-commendw-price" title="￥<%=goods_commend_list[i].goods_price%>">￥<%=goods_commend_list[i].goods_price%></span>
 								</a>
 							<%}%>
-						</div>
 					</div>
+				</div>
+			</div>
+			
+			<div class="pddc-gray-warp">
+				
+					
+				<div class="pddc-store-rate">
+<% for (var k in store_info.store_credit) { var v = store_info.store_credit[k]; %>
+					<dl><dt><%= v.text %></dt>
+					<dd class="<%= v.percent_class %>"><%= v.credit %>
+					<span><%= v.percent_text %></span>
+					</dd>
+					</dl>
+<% } %>
+				</div>
+
+				
+				<div class="pddc-store-btns">
+				<a href="product_store.html?store_id=<%=store_info.store_id%>"><i></i>进入店铺</a>
+				<a href="product_goods.html?store_id=<%=store_info.store_id%>"><i></i>店内搜索</a>
+				</div>
+				
+							<div class="cart-concern-btm-fixed four-column">
+				<div class="concern-cart">
+					<a class="cart-car-icn" href="product_store.html?store_id=<%=store_info.store_id%>">
+						<em class="btm-store-icn">
+						</em>
+						<span>店铺</span>
+					</a>
+					<a class="cart-car-icn goods-favorites" href="javascript:void(0);">
+						<em class="btm-fav-icn">
+						</em>
+						<span>收藏</span>
+					</a>
+					<a class="cart-car-icn kefu_im" href="javascript:void(0);">
+						<em class="btm-kefu-icn">
+						</em>
+						<span>客服</span>
+					</a>
+				</div>
+				<div class="action-list">
+				<%if(IsHaveBuy=='0'){ %>
+					<% if (goods_info.is_virtual == '1') { %>
+								<a href="javascript:void(0);" class="red-color buy-now">立即购买</a>
+							<% } else if (goods_info.is_presell == '1') { %>
+								<a href="javascript:void(0);" style="width:100%"  class="red-color buy-now">预售购买</a>
+							<% } else if (goods_info.is_fcode == '1') { %>
+								<a href="javascript:void(0);" style="width:100%" class="red-color buy-now">F码购买</a>
+							<% } else { %>
+								<a href="javascript:void(0);" class="red-color buy-now" <%if(goods_info.promotion_type!='groupbuy'){%> style="width:50%" <% } else {%> style="width:100%" <%}%>>立即购买</a>
+								<%if(goods_info.promotion_type!='groupbuy'){%>
+								<a href="javascript:void(0);" class="yellow-color add-to-cart">加入购物车</a>
+								<%}%>
+							<% } %>
+							<% } else {%>
+							<a href="javascript:void(0);" style="width:100%" class="gray-color">您已参加本商品抢购活动</a>
+							<%}%>
 				</div>
 			</div>
 		</div>
@@ -302,12 +319,10 @@
 	<script type="text/javascript" src="../js/tmpl/footer.js"></script>
 	<script type="text/javascript" src="../js/tmpl/product_detail.js"></script>
 
-	<script type="text/javascript" src="../js/zepto.min.js"></script>
-    <script type="text/javascript" src="../js/template.js"></script>
+
+
     <script type="text/javascript" src="../js/jquery.min.js"></script>
-	<script type="text/javascript" src="../js/config.js"></script>
-    <script type="text/javascript" src="../js/common.js"></script>
-    <script type="text/javascript" src="../js/tmpl/common-top.js"></script>
+
     <script type="text/javascript" src="../js/tmpl/product_info.js"></script>
     <script type="text/javascript" src="../../chat/resource/js/store.js"></script>
     <script type="text/javascript" src="../../chat/resource/js/user.js"></script>

@@ -74,6 +74,17 @@ a{text-decoration: none;}
 .mc-cnt li a i.im-collect-store {background-position: 0px -152px;}
 .mc-cnt li a i.im-address {background-position: 0px -190px;}
 .mc-cnt li a i.im-history {background-position:0px -228px;}
+.mc-cnt li a i.im-feedback {background-position:0px -305px;}
+.mc-cnt li a i.im-kefu {background-position:0px -270px;}
+
+
+.im-order,.im-quan,.im-collect,.im-address,.im-history{display: inline-block;background: url(../images/icon-2.png) no-repeat;vertical-align: middle;}
+.im-order,.im-quan,.im-collect,.im-address,.im-history{width: 38px;height: 38px;}
+.im-order{background-position: 0px 0px;}
+.im-quan{background-position: 0px -36px;}
+.im-collect{background-position: 0px -74px;}
+.im-address{background-position: 0px -111px;}
+.im-history{background-position:0px -149px;}
 
 .pd-choice-icon{width: 13px;height: 13px;background-position: -88px -654px;}
 .i-go-right{width: 23px;height: 25px;background-position:0px -662px;}

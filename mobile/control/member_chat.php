@@ -52,9 +52,15 @@ class member_chatControl extends mobileMemberControl {
 		$types = array('member_id','member_name','store_id','member');
 		$key = $_POST['t'];
 		$member_id = intval($_POST['u_id']);
-		if(trim($key) != '' && in_array($key,$types)){
-			$member_info = $model_chat->getMember($member_id);
-			output_data(array('member_info' => $member_info));
+        if($member_id > 0 && trim($key) != '' && in_array($key,$types)){
+
+            $member_info = $model_chat->getMember($member_id);
+
+            output_data(array('member_info' => $member_info));
+
+        } else {
+
+            output_error('参数错误');
 		}
 	}
 
@@ -129,10 +135,30 @@ class member_chatControl extends mobileMemberControl {
 	 *
 	 */
 	public function get_node_infoOp(){
+		$u_id = intval($_GET['u_id']);
+		$goods_id = intval($_GET['chat_goods_id']);
 		$member_id = $this->member_info['member_id'];
 		$model_chat	= Model('web_chat');
 		$member_info = $model_chat->getMember($member_id);
-        Tpl::output('member_info', $member_info);
-        Tpl::showpage('node_info');
+		$user_info = $model_chat->getMember($u_id);
+		
+
+        $goods =array();
+		if($goods_id>0){
+			$goods=$model_chat->getGoodsInfo($goods_id);
+		}
+		$outinfo=array();
+		$outinfo['node_chat']=C('node_chat');
+		$outinfo['node_site_url']=NODE_SITE_URL;
+		$outinfo['resource_site_url']=RESOURCE_SITE_URL;
+		$outinfo['member_info']=$member_info;
+		$outinfo['user_info']=$user_info;
+		$outinfo['chat_goods']=$goods;
+		//$outinfo['node_chat']=true;
+
+		output_data($outinfo);
+        //Tpl::output('member_info', $member_info);
+
+        //Tpl::showpage('node_info');
 	}
 }
