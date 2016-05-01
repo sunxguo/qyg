@@ -64,7 +64,7 @@ $(function() {
             a["avatar"] = memberInfo.member_avatar;
             a["s_id"] = memberInfo.store_id;
             a["s_name"] = memberInfo.store_name;
-            a["s_avatar"] = memberInfo.store_avatar;
+            a["s_avatar"] = memberInfo.member_avatar;
             socket = io.connect(e, {
                 resource: "resource",
                 reconnect: false
