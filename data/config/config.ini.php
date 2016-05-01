@@ -60,7 +60,7 @@ $config['cache']['type'] 			= 'file';
 //$config['redis']['slave']      	    = array();
 //$config['fullindexer']['open']      = false;
 //$config['fullindexer']['appname']   = '33hao';
-$config['debug'] 			= true;
+$config['debug'] 			= false;
 $config['default_store_id'] = '1';
 //如果开始伪静态，这里设置为true
 $config['url_model'] = false;

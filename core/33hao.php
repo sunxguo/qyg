@@ -35,6 +35,8 @@ define('DELIVERY_SITE_URL',$config['delivery_site_url']);
 define('BASE_DATA_PATH',BASE_ROOT_PATH.'/data');
 define('BASE_UPLOAD_PATH',BASE_DATA_PATH.'/upload');
 define('BASE_RESOURCE_PATH',BASE_DATA_PATH.'/resource');
+define('CHAT_SITE_URL', $config['chat_site_url']);
+define('NODE_SITE_URL', $config['node_site_url']);
 
 define('CHARSET',$config['db'][1]['dbcharset']);
 define('DBDRIVER',$config['dbdriver']);
