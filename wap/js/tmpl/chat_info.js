@@ -125,7 +125,7 @@ $(function() {
                         continue
                     }
                     t = a;
-                    s.avatar = !$.isEmptyObject(userInfo.store_id) ? userInfo.store_avatar: userInfo.member_avatar;
+                    s.avatar = !$.isEmptyObject(userInfo.store_id) ? userInfo.member_avatar: userInfo.member_avatar;
                     s.class = "msg-other";
                     n(s)
                 }
@@ -226,7 +226,7 @@ $(function() {
                             } else {
                                 var s = {};
                                 s.class = "msg-other";
-                                s.avatar = userInfo.store_avatar == "" ? userInfo.member_avatar: userInfo.store_avatar;
+                                s.avatar = userInfo.member_avatar == "" ? userInfo.member_avatar: userInfo.member_avatar;
                                 s.t_msg = a.t_msg;
                                 n(s)
                             }
